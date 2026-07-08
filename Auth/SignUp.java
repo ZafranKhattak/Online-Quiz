@@ -182,7 +182,7 @@ public class SignUp {
             try {
 
                 Connection connection = DriverManager.getConnection(
-                        "jdbc:mysql://localhost:3306/ONLINE_STORE",
+                        "jdbc:mysql://localhost:3306/ONLINE_QUIZ",
                         "root",
                         "ZafranKhan@06");
 

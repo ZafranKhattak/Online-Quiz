@@ -17,12 +17,9 @@ public class SignIn {
         frame.setTitle("Online Store");
         frame.setSize(900, 700);
 
-        // ===== BACKGROUND COLOR OF FRAME ========== //
-        frame.getContentPane().setBackground(new Color(18, 18, 18));
-
         // ============ IMAGE BACKGROUND ============== //
 
-        ImageIcon icon = new ImageIcon("Auth/b.jpg");
+        ImageIcon icon = new ImageIcon("Auth/images.jpeg");
         Image img = icon.getImage().getScaledInstance(
                 1300, 700, Image.SCALE_SMOOTH);
 
@@ -122,7 +119,7 @@ public class SignIn {
 
             try {
                 Connection connection = DriverManager.getConnection(
-                        "jdbc:mysql://localhost:3306/ONLINE_STORE",
+                        "jdbc:mysql://localhost:3306/ONLINE_QUIZ",
                         "root",
                         "ZafranKhan@06");
 
