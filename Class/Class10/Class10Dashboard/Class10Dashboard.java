@@ -1,9 +1,13 @@
 package Class.Class10.Class10Dashboard;
 
 import javax.swing.*;
-import Auth.SignIn;
-import MainDashboard.MainDashboard;
 
+import MainDashboard.MainDashboard;
+import Class.Class10.Biology.BiologyDashboard.BiologyDashboard;
+import Class.Class10.Urdu.UrduDashboard.UrduDashboard;
+import Class.Class10.Math.MathDashboard.MathDashboard;
+import Class.Class10.Physics.PhysicsDashboard.PhysicsDashboard;
+import Class.Class10.Chemistry.ChemistryDashboard.ChemistryDashboard;
 import java.awt.*;
 
 public class Class10Dashboard {
@@ -46,11 +50,30 @@ public class Class10Dashboard {
 
         // ===================== BUTTON ==================== //
         JButton button6 = buttonField("Physics", 80);
+        button6.addActionListener(e->{
+            new PhysicsDashboard();
+            frame.dispose();;
+        });
         JButton button7 = buttonField("Chemistry", 120);
+        button7.addActionListener(e->{
+            new ChemistryDashboard();
+            frame.dispose();;
+        });
         JButton button8 = buttonField("Biology", 160);
+        button8.addActionListener(e->{
+            new BiologyDashboard();
+            frame.dispose();;
+        });
         JButton button9 = buttonField("Math", 200);
+        button9.addActionListener(e->{
+            new MathDashboard();
+            frame.dispose();;
+        });
         JButton button10 = buttonField("Urdu", 240);
-        JButton button11 = buttonField("ICS", 280);
+        button10.addActionListener(e->{
+            new UrduDashboard();
+            frame.dispose();;
+        });
         JButton backButton = buttonField("Back", 380);
         backButton.setBackground(Color.RED);
         backButton.addActionListener(e -> {
@@ -62,7 +85,6 @@ public class Class10Dashboard {
         panel.add(button8);
         panel.add(button9);
         panel.add(button10);
-        panel.add(button11);
         panel.add(backButton);
 
     }

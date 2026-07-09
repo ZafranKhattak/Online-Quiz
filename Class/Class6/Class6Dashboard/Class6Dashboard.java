@@ -1,7 +1,7 @@
 package Class.Class6.Class6Dashboard;
 
 import javax.swing.*;
-
+import Class.Class6.Biology.BiologyDashboard.*;
 import MainDashboard.MainDashboard;
 
 import java.awt.*;
@@ -46,11 +46,35 @@ public class Class6Dashboard {
 
         // ===================== BUTTON ==================== //
         JButton button6 = buttonField("Physics", 80);
+        button6.addActionListener(e->{
+            new BiologyDashboard();
+            frame.dispose();
+        });
         JButton button7 = buttonField("Chemistry", 120);
+        button7.addActionListener(e->{
+            new BiologyDashboard();
+            frame.dispose();
+        });
         JButton button8 = buttonField("Biology", 160);
+        button8.addActionListener(e->{
+            new BiologyDashboard();
+            frame.dispose();
+        });
         JButton button9 = buttonField("Math", 200);
+        button9.addActionListener(e->{
+            new BiologyDashboard();
+            frame.dispose();
+        });
         JButton button10 = buttonField("Urdu", 240);
+        button10.addActionListener(e->{
+            new BiologyDashboard();
+            frame.dispose();
+        });
         JButton button11 = buttonField("ICS", 280);
+        button11.addActionListener(e->{
+            new BiologyDashboard();
+            frame.dispose();
+        });
         JButton backButton = buttonField("Back", 380);
         backButton.setBackground(Color.RED);
         backButton.addActionListener(e -> {

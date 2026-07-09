@@ -44,22 +44,21 @@ public class UrduDashboard {
         panel.add(welcomeLabel);
         
 
-        JButton button6 = buttonField("Easy Test", 80);
+        JButton button6 = buttonField("Easy Test", 100);
         button6.addActionListener(e->{
                 
                 frame.dispose();
         });
 
-        JButton button7 = buttonField("Medium Test", 120);
+        JButton button7 = buttonField("Medium Test", 160);
         button7.addActionListener(e->{
-
-           
+            new UrduDashboard();
             frame.dispose();
         });
 
-        JButton button8 = buttonField("Difficult Test", 160);
+        JButton button8 = buttonField("Difficult Test", 220);
         button8.addActionListener(e->{
-           
+            new UrduDashboard();
             frame.dispose();
         });
 

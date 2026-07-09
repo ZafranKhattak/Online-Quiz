@@ -40,21 +40,21 @@ public class MathDashboard {
         welcomeLabel.setBounds(120, 25, 190, 30);
         panel.add(welcomeLabel);
 
-        JButton button6 = buttonField("Easy Test", 80);
+        JButton button6 = buttonField("Easy Test", 100);
         button6.addActionListener(e -> {
-
+            new MathDashboard();
             frame.dispose();
         });
 
-        JButton button7 = buttonField("Medium Test", 120);
+        JButton button7 = buttonField("Medium Test", 160);
         button7.addActionListener(e -> {
-
+            new MathDashboard();
             frame.dispose();
         });
 
-        JButton button8 = buttonField("Difficult Test", 160);
+        JButton button8 = buttonField("Difficult Test", 220);
         button8.addActionListener(e -> {
-
+            new MathDashboard();
             frame.dispose();
         });
 
