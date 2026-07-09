@@ -1,12 +1,13 @@
 package Class.Class7.Class7Dashboard;
 
 import javax.swing.*;
+
+import Class.Class7.Arabic.ArabicDashboard.ArabicDashboard;
 import Class.Class7.English.EnglishDashboard.EnglishDashboard;
-import Class.Class7.Biology.BiologyDashboard.BiologyDashboard;
+import Class.Class7.GeneralScience.GeneralScienceDashboard.GeneralScienceDashboard;
+import Class.Class7.GeoGraphy.GeoGraphyDashboard.GeoGraphyDashboard;
 import Class.Class7.Math.MathDashboard.MathDashboard;
 import Class.Class7.Urdu.UrduDashboard.UrduDashboard;
-import Class.Class7.Physics.PhysicsDashboard.PhysicsDashboard;
-import Class.Class7.Chemistry.ChemistryDashboard.ChemistryDashboard;
 import MainDashboard.MainDashboard;
 import java.awt.*;
 
@@ -50,19 +51,19 @@ public class Class7Dashboard {
         panel.add(welcomeLabel);
         
         // ===================== BUTTON ==================== //
-        JButton button6 = buttonField("Physics", 80);
+        JButton button6 = buttonField("General Science", 80);
         button6.addActionListener(e->{
-            new PhysicsDashboard();
+            new ArabicDashboard();
             frame.dispose();;
         });
-        JButton button7 = buttonField("Chemistry", 120);
+        JButton button7 = buttonField("GeoGraphy", 120);
         button7.addActionListener(e->{
-            new ChemistryDashboard();
+            new GeoGraphyDashboard();
             frame.dispose();;
         });
-        JButton button8 = buttonField("Biology", 160);
+        JButton button8 = buttonField("Arabic", 160);
         button8.addActionListener(e->{
-            new BiologyDashboard();
+            new GeneralScienceDashboard();
             frame.dispose();;
         });
         JButton button9 = buttonField("Math", 200);

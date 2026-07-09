@@ -1,12 +1,11 @@
 package Class.Class8.Class8Dashboard;
 
 import javax.swing.*;
-
-import Class.Class8.Biology.BiologyDashboard.BiologyDashboard;
 import Class.Class8.Urdu.UrduDashboard.UrduDashboard;
 import Class.Class8.Math.MathDashboard.MathDashboard;
 import Class.Class8.Physics.PhysicsDashboard.PhysicsDashboard;
-import Class.Class8.Chemistry.ChemistryDashboard.ChemistryDashboard;
+import Class.Class8.GeneralScience.GeneralScienceDashboard.GeneralScienceDashboard;
+import Class.Class8.GeoGraphy.GeoGraphyDashboard.GeoGraphyDashboard;
 import MainDashboard.MainDashboard;
 
 import java.awt.*;
@@ -50,19 +49,19 @@ public class Class8Dashboard {
         panel.add(welcomeLabel);
 
         // ===================== BUTTON ==================== //
-        JButton button6 = buttonField("Physics", 80);
+        JButton button6 = buttonField("General Science", 80);
         button6.addActionListener(e->{
             new PhysicsDashboard();
             frame.dispose();;
         });
-        JButton button7 = buttonField("Chemistry", 120);
+        JButton button7 = buttonField("GeoGraphy", 120);
         button7.addActionListener(e->{
-            new ChemistryDashboard();
+            new GeoGraphyDashboard();
             frame.dispose();;
         });
-        JButton button8 = buttonField("Biology", 160);
+        JButton button8 = buttonField("Arabic", 160);
         button8.addActionListener(e->{
-            new BiologyDashboard();
+            new GeneralScienceDashboard();
             frame.dispose();;
         });
         JButton button9 = buttonField("Math", 200);

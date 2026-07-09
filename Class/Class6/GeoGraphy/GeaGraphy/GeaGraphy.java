@@ -1,12 +1,12 @@
-package Class.Class6.Chemistry.ChemistryDashboard;
+package Class.Class6.GeoGraphy.GeaGraphy;
 
 import Class.Class6.Class6Dashboard.Class6Dashboard;
 import javax.swing.*;
 import java.awt.*;
 
-public class ChemistryDashboard {
+public class GeaGraphy {
 
-    public ChemistryDashboard() {
+    public GeaGraphy() {
         // ==================== JFRAME ====================
         JFrame frame = new JFrame("Dashboard");
         frame.setVisible(true);
@@ -43,19 +43,19 @@ public class ChemistryDashboard {
 
         JButton button6 = buttonField("Easy Test", 100);
         button6.addActionListener(e -> {
-            new ChemistryDashboard();
+            new GeaGraphy();
             frame.dispose();
         });
 
         JButton button7 = buttonField("Medium Test", 160);
         button7.addActionListener(e -> {
-            new ChemistryDashboard();
+            new GeaGraphy();
             frame.dispose();
         });
 
         JButton button8 = buttonField("Difficult Test", 220);
         button8.addActionListener(e -> {
-            new ChemistryDashboard();
+            new GeaGraphy();
             frame.dispose();
         });
 

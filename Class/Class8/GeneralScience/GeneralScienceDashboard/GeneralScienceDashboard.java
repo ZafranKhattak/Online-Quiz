@@ -1,12 +1,13 @@
-package Class.Class6.Physics.PhysicsDashboard;
+package Class.Class8.GeneralScience.GeneralScienceDashboard;
 
+import Class.Class8.Class8Dashboard.*;
 import javax.swing.*;
 import java.awt.*;
-import Class.Class6.Class6Dashboard.Class6Dashboard;
 
-public class PhysicsDashboard {
+public class GeneralScienceDashboard {
 
-    public PhysicsDashboard() {
+    public GeneralScienceDashboard() {
+
         // ==================== JFRAME ====================
         JFrame frame = new JFrame("Dashboard");
         frame.setVisible(true);
@@ -41,28 +42,28 @@ public class PhysicsDashboard {
         welcomeLabel.setBounds(120, 25, 190, 30);
         panel.add(welcomeLabel);
 
-        JButton button6 = buttonField("Easy Test", 100);
+        JButton button6 = buttonField("Easy Test", 80);
         button6.addActionListener(e -> {
-            new PhysicsDashboard();
+
             frame.dispose();
         });
 
-        JButton button7 = buttonField("Medium Test", 160);
+        JButton button7 = buttonField("Medium Test", 120);
         button7.addActionListener(e -> {
-            new PhysicsDashboard();
+
             frame.dispose();
         });
 
-        JButton button8 = buttonField("Difficult Test", 220);
+        JButton button8 = buttonField("Difficult Test", 160);
         button8.addActionListener(e -> {
-            new PhysicsDashboard();
+
             frame.dispose();
         });
 
         JButton backButton = buttonField("Back", 380);
         backButton.setBackground(Color.RED);
         backButton.addActionListener(e -> {
-            new Class6Dashboard();
+            new Class8Dashboard();
             frame.dispose();
         });
         panel.add(button6);
