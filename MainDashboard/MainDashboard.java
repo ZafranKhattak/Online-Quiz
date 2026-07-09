@@ -3,7 +3,6 @@ package MainDashboard;
 import Class.Class10.Class10Dashboard.Class10Dashboard;
 import Class.Class11.Class11Dashboard.Class11Dashboard;
 import Class.Class12.Class12Dashboard.Class12Dashboard;
-import Class.Class6.Class6Dashboard.*;
 import Class.Class6.Class6Dashboard.Class6Dashboard;
 import Class.Class7.Class7Dashboard.Class7Dashboard;
 import Class.Class9.Class9Dashboard.Class9Dashboard;
@@ -22,7 +21,7 @@ public class MainDashboard {
         JFrame frame = new JFrame("Dashboard");
         frame.setVisible(true);
         frame.setLayout(null);
-        frame.setSize(500 , 600);
+        frame.setSize(800 , 800);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // =================== IMAGE ICON BACGROUND ===========

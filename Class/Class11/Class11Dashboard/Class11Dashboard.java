@@ -19,7 +19,7 @@ public class Class11Dashboard {
         JFrame frame = new JFrame("Dashboard");
         frame.setVisible(true);
         frame.setLayout(null);
-        frame.setSize(500, 600);
+        frame.setSize(800, 700);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // =================== IMAGE ICON BACGROUND ===========
@@ -75,8 +75,8 @@ public class Class11Dashboard {
             new UrduDashboard();
             frame.dispose();;
         });
-        JButton button11 = buttonField("ICS", 240);
-        button10.addActionListener(e->{
+        JButton button11 = buttonField("ICS", 280);
+        button11.addActionListener(e->{
             new ICSDashboard();
             frame.dispose();;
         });
