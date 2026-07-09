@@ -3,7 +3,7 @@ package Class.Class12.Math.MathDashboard;
 
 import javax.swing.*;
 import java.awt.*;
-import Class.Class6.Class6Dashboard.Class6Dashboard;
+import Class.Class12.Class12Dashboard.*;
 
 public class MathDashboard {
     public MathDashboard() {
@@ -62,7 +62,7 @@ public class MathDashboard {
         JButton backButton = buttonField("Back", 380);
         backButton.setBackground(Color.RED);
         backButton.addActionListener(e -> {
-            new Class6Dashboard();
+            new Class12Dashboard();
             frame.dispose();
         });
         panel.add(button6);

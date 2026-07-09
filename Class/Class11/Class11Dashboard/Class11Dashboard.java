@@ -6,6 +6,7 @@ import Class.Class11.Urdu.UrduDashboard.UrduDashboard;
 import Class.Class11.Math.MathDashboard.MathDashboard;
 import Class.Class11.Physics.PhysicsDashboard.PhysicsDashboard;
 import Class.Class11.Chemistry.ChemistryDashboard.ChemistryDashboard;
+import Class.Class11.ICS.ICSDashboard.ICSDashboard;
 import MainDashboard.MainDashboard;
 
 import java.awt.*;
@@ -74,6 +75,11 @@ public class Class11Dashboard {
             new UrduDashboard();
             frame.dispose();;
         });
+        JButton button11 = buttonField("ICS", 240);
+        button10.addActionListener(e->{
+            new ICSDashboard();
+            frame.dispose();;
+        });
         JButton backButton = buttonField("Back", 380);
         backButton.setBackground(Color.RED);
         backButton.addActionListener(e -> {
@@ -85,6 +91,7 @@ public class Class11Dashboard {
         panel.add(button8);
         panel.add(button9);
         panel.add(button10);
+        panel.add(button11);
         panel.add(backButton);
 
     }

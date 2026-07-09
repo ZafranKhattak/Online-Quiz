@@ -1,7 +1,13 @@
 package Class.Class6.Class6Dashboard;
 
 import javax.swing.*;
-import Class.Class6.Biology.BiologyDashboard.*;
+
+import Class.Class6.Chemistry.ChemistryDashboard.ChemistryDashboard;
+import Class.Class6.Physics.PhysicsDashboard.PhysicsDashboard;
+import Class.Class6.Biology.BiologyDashboard.BiologyDashboard;
+import Class.Class6.Math.MathDashboard.MathDashboard;
+import Class.Class6.Urdu.UrduDashboard.UrduDashboard;
+import Class.Class6.English.EnglishDashboard.EnglishDashboard;
 import MainDashboard.MainDashboard;
 
 import java.awt.*;
@@ -47,12 +53,12 @@ public class Class6Dashboard {
         // ===================== BUTTON ==================== //
         JButton button6 = buttonField("Physics", 80);
         button6.addActionListener(e->{
-            new BiologyDashboard();
+            new PhysicsDashboard();
             frame.dispose();
         });
         JButton button7 = buttonField("Chemistry", 120);
         button7.addActionListener(e->{
-            new BiologyDashboard();
+            new ChemistryDashboard();
             frame.dispose();
         });
         JButton button8 = buttonField("Biology", 160);
@@ -62,17 +68,17 @@ public class Class6Dashboard {
         });
         JButton button9 = buttonField("Math", 200);
         button9.addActionListener(e->{
-            new BiologyDashboard();
+            new MathDashboard();
             frame.dispose();
         });
         JButton button10 = buttonField("Urdu", 240);
         button10.addActionListener(e->{
-            new BiologyDashboard();
+            new UrduDashboard();
             frame.dispose();
         });
-        JButton button11 = buttonField("ICS", 280);
+        JButton button11 = buttonField("English", 280);
         button11.addActionListener(e->{
-            new BiologyDashboard();
+            new EnglishDashboard();
             frame.dispose();
         });
         JButton backButton = buttonField("Back", 380);

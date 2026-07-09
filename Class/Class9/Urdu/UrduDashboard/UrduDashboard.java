@@ -2,8 +2,7 @@ package Class.Class9.Urdu.UrduDashboard;
 
 import java.awt.*;
 import javax.swing.*;
-
-import Class.Class6.Class6Dashboard.Class6Dashboard;
+import Class.Class9.Class9Dashboard.Class9Dashboard;
 
 public class UrduDashboard {
 
@@ -63,7 +62,7 @@ public class UrduDashboard {
         JButton backButton = buttonField("Back", 380);
         backButton.setBackground(Color.RED);
         backButton.addActionListener(e -> {
-            new Class6Dashboard();
+            new Class9Dashboard();
             frame.dispose();
         });
         panel.add(button6);

@@ -2,7 +2,7 @@ package Class.Class11.Physics.PhysicsDashboard;
 
 import javax.swing.*;
 import java.awt.*;
-import Class.Class6.Class6Dashboard.Class6Dashboard;
+import Class.Class11.Class11Dashboard.*;
 
 public class PhysicsDashboard {
 
@@ -62,7 +62,7 @@ public class PhysicsDashboard {
         JButton backButton = buttonField("Back", 380);
         backButton.setBackground(Color.RED);
         backButton.addActionListener(e -> {
-            new Class6Dashboard();
+            new Class11Dashboard();
             frame.dispose();
         });
         panel.add(button6);

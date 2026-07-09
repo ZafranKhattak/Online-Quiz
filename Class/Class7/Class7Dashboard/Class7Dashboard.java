@@ -1,17 +1,14 @@
 package Class.Class7.Class7Dashboard;
 
 import javax.swing.*;
-
+import Class.Class7.English.EnglishDashboard.EnglishDashboard;
 import Class.Class7.Biology.BiologyDashboard.BiologyDashboard;
 import Class.Class7.Math.MathDashboard.MathDashboard;
 import Class.Class7.Urdu.UrduDashboard.UrduDashboard;
 import Class.Class7.Physics.PhysicsDashboard.PhysicsDashboard;
 import Class.Class7.Chemistry.ChemistryDashboard.ChemistryDashboard;
 import MainDashboard.MainDashboard;
-
 import java.awt.*;
-
-
 
 public class Class7Dashboard {
     
@@ -52,8 +49,6 @@ public class Class7Dashboard {
         welcomeLabel.setBounds(120 , 25 , 190 , 30);
         panel.add(welcomeLabel);
         
-
-         
         // ===================== BUTTON ==================== //
         JButton button6 = buttonField("Physics", 80);
         button6.addActionListener(e->{
@@ -76,8 +71,13 @@ public class Class7Dashboard {
             frame.dispose();;
         });
         JButton button10 = buttonField("Urdu", 240);
-        button6.addActionListener(e->{
+        button10.addActionListener(e->{
             new UrduDashboard();
+            frame.dispose();;
+        });
+        JButton button11 = buttonField("English", 280);
+        button11.addActionListener(e->{
+            new EnglishDashboard();
             frame.dispose();;
         });
         JButton backButton = buttonField("Back", 380);
@@ -91,6 +91,7 @@ public class Class7Dashboard {
         panel.add(button8);
         panel.add(button9);
         panel.add(button10);
+        panel.add(button11);
         panel.add(backButton);
 
     }

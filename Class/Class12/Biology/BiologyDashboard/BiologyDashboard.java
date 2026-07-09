@@ -1,6 +1,6 @@
 package Class.Class12.Biology.BiologyDashboard;
 
-import Class.Class7.Class7Dashboard.*;
+import Class.Class12.Class12Dashboard.*;
 import javax.swing.*;
 import java.awt.*;
 
@@ -63,7 +63,7 @@ public class BiologyDashboard {
         JButton backButton = buttonField("Back", 380);
         backButton.setBackground(Color.RED);
         backButton.addActionListener(e -> {
-            new Class7Dashboard();
+            new Class12Dashboard();
             frame.dispose();
         });
         panel.add(button6);
