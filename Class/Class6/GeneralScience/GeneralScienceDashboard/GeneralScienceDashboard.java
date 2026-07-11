@@ -3,6 +3,8 @@ package Class.Class6.GeneralScience.GeneralScienceDashboard;
 import javax.swing.*;
 import Class.Class6.Class6Dashboard.Class6Dashboard;
 import Class.Class6.GeneralScience.Easy.EasyQuestion;
+import Class.Class6.GeneralScience.Hard.DifficultQuestion;
+import Class.Class6.GeneralScience.Medium.MediumQuestion;
 
 import java.awt.*;
 
@@ -53,13 +55,13 @@ public class GeneralScienceDashboard {
 
         JButton button7 = buttonField("Medium Test", 180);
         button7.addActionListener(e->{
-           
+           new MediumQuestion();
             frame.dispose();
         });
 
         JButton button8 = buttonField("Difficult Test", 240);
         button8.addActionListener(e->{
-           
+           new DifficultQuestion();
             frame.dispose();
         });
 
