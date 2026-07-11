@@ -3,6 +3,9 @@ package Class.Class6.English.EnglishDashboard;
 import javax.swing.*;
 import java.awt.*;
 import Class.Class6.Class6Dashboard.Class6Dashboard;
+import Class.Class6.English.Easy.EasyQuestion;
+import Class.Class6.English.Hard.DifficultQuestion;
+import Class.Class6.English.Medium.MediumQuestion;
 
 public class EnglishDashboard {
 
@@ -43,19 +46,19 @@ public class EnglishDashboard {
 
         JButton button6 = buttonField("Easy Test", 100);
         button6.addActionListener(e -> {
-            new EnglishDashboard();
+            new EasyQuestion();
             frame.dispose();
         });
 
         JButton button7 = buttonField("Medium Test", 160);
         button7.addActionListener(e -> {
-            new EnglishDashboard();
+            new MediumQuestion();
             frame.dispose();
         });
 
         JButton button8 = buttonField("Difficult Test", 220);
         button8.addActionListener(e -> {
-            new EnglishDashboard();
+            new DifficultQuestion();
             frame.dispose();
         });
 

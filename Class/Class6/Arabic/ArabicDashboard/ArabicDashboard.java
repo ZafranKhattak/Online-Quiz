@@ -2,6 +2,10 @@ package Class.Class6.Arabic.ArabicDashboard;
 
 import javax.swing.*;
 import java.awt.*;
+
+import Class.Class6.Arabic.Easy.EasyQuestion;
+import Class.Class6.Arabic.Hard.DifficultQuestion;
+import Class.Class6.Arabic.Medium.MediumQuestion;
 import Class.Class6.Class6Dashboard.Class6Dashboard;
 
 public class ArabicDashboard {
@@ -43,19 +47,19 @@ public class ArabicDashboard {
 
         JButton button6 = buttonField("Easy Test", 100);
         button6.addActionListener(e -> {
-            new ArabicDashboard();
+            new EasyQuestion();
             frame.dispose();
         });
 
         JButton button7 = buttonField("Medium Test", 160);
         button7.addActionListener(e -> {
-            new ArabicDashboard();
+            new MediumQuestion();
             frame.dispose();
         });
 
         JButton button8 = buttonField("Difficult Test", 220);
         button8.addActionListener(e -> {
-            new ArabicDashboard();
+            new DifficultQuestion();
             frame.dispose();
         });
 

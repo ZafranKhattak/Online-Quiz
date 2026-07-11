@@ -1,6 +1,9 @@
-package Class.Class6.GeoGraphy.GeaGraphy;
+package Class.Class6.GeoGraphy.GeaGraphyDashboard;
 
 import Class.Class6.Class6Dashboard.Class6Dashboard;
+import Class.Class6.GeoGraphy.Medium.MediumQuestion;
+import Class.Class6.GeoGraphy.Hard.DifficultQuestion;
+import Class.Class6.GeoGraphy.Easy.EasyQuestion;
 import javax.swing.*;
 import java.awt.*;
 
@@ -43,19 +46,19 @@ public class GeaGraphy {
 
         JButton button6 = buttonField("Easy Test", 100);
         button6.addActionListener(e -> {
-            new GeaGraphy();
+            new EasyQuestion();
             frame.dispose();
         });
 
         JButton button7 = buttonField("Medium Test", 160);
         button7.addActionListener(e -> {
-            new GeaGraphy();
+            new MediumQuestion();
             frame.dispose();
         });
 
         JButton button8 = buttonField("Difficult Test", 220);
         button8.addActionListener(e -> {
-            new GeaGraphy();
+            new DifficultQuestion();
             frame.dispose();
         });
 

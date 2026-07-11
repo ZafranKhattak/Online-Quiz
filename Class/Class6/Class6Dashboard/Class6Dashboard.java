@@ -7,7 +7,7 @@ import Class.Class6.Urdu.UrduDashboard.UrduDashboard;
 import Class.Class6.Arabic.ArabicDashboard.ArabicDashboard;
 import Class.Class6.English.EnglishDashboard.EnglishDashboard;
 import Class.Class6.GeneralScience.GeneralScienceDashboard.GeneralScienceDashboard;
-import Class.Class6.GeoGraphy.GeaGraphy.GeaGraphy;
+import Class.Class6.GeoGraphy.GeaGraphyDashboard.GeaGraphy;
 import MainDashboard.MainDashboard;
 
 import java.awt.*;
