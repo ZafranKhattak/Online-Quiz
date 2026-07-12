@@ -1,18 +1,21 @@
 package Class.Class9.Chemistry.ChemistryDashboard;
 
+import Class.Class9.Biology.Hard.DifficultQuestion;
+import Class.Class9.Biology.Easy.EasyQuestion;
+import Class.Class9.Biology.Medium.MediumQuestion;
+import Class.Class9.Class9Dashboard.*;
 import javax.swing.*;
 import java.awt.*;
-import Class.Class9.Class9Dashboard.*;
 
 public class ChemistryDashboard {
-    
-    public ChemistryDashboard()
-    {
-         // ==================== JFRAME ====================
+
+    public ChemistryDashboard() {
+
+        // ==================== JFRAME ====================
         JFrame frame = new JFrame("Dashboard");
         frame.setVisible(true);
         frame.setLayout(null);
-        frame.setSize(800 , 700);
+        frame.setSize(800, 700);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // =================== IMAGE ICON BACGROUND ===========
@@ -20,7 +23,7 @@ public class ChemistryDashboard {
         Image img = icon.getImage().getScaledInstance(
                 1280, 700, Image.SCALE_SMOOTH);
         JLabel background = new JLabel(new ImageIcon(img));
-        background.setBounds(0 , 0 , 1280 , 700);
+        background.setBounds(0, 0, 1280, 700);
         background.setLayout(null);
         frame.add(background);
 
@@ -28,7 +31,7 @@ public class ChemistryDashboard {
 
         JPanel panel = new JPanel();
         panel.setLayout(null);
-        panel.setBounds(450 , 80 , 400 , 550);
+        panel.setBounds(450, 80, 400, 550);
         panel.setBackground(Color.BLACK);
         background.add(panel);
 
@@ -37,34 +40,32 @@ public class ChemistryDashboard {
         JLabel welcomeLabel = new JLabel();
         welcomeLabel.setText("<html><u>Welcome To Quiz</u></html>");
         welcomeLabel.setForeground(Color.WHITE);
-        welcomeLabel.setFont(new Font("ARIAL" , Font.BOLD , 18));
+        welcomeLabel.setFont(new Font("ARIAL", Font.BOLD, 18));
         welcomeLabel.setLayout(null);
-        welcomeLabel.setBounds(120 , 25 , 190 , 30);
+        welcomeLabel.setBounds(120, 25, 190, 30);
         panel.add(welcomeLabel);
-        
 
         JButton button6 = buttonField("Easy Test", 80);
-        button6.addActionListener(e->{
-                
-                frame.dispose();
+        button6.addActionListener(e -> {
+            new EasyQuestion();
+            frame.dispose();
         });
 
         JButton button7 = buttonField("Medium Test", 120);
-        button7.addActionListener(e->{
-
-           
+        button7.addActionListener(e -> {
+            new MediumQuestion();
             frame.dispose();
         });
 
         JButton button8 = buttonField("Difficult Test", 160);
-        button8.addActionListener(e->{
-           
+        button8.addActionListener(e -> {
+            new DifficultQuestion();
             frame.dispose();
         });
 
         JButton backButton = buttonField("Back", 380);
         backButton.setBackground(Color.RED);
-        backButton.addActionListener(e->{
+        backButton.addActionListener(e -> {
             new Class9Dashboard();
             frame.dispose();
         });
@@ -76,17 +77,17 @@ public class ChemistryDashboard {
 
     }
 
-    public JButton buttonField(String buttonName,int y)
-    {
+    public JButton buttonField(String buttonName, int y) {
         JButton btnField = new JButton();
 
-        btnField.setBounds(100 , y ,220 , 30 );
+        btnField.setBounds(100, y, 220, 30);
         btnField.setLayout(null);
         btnField.setBackground(Color.BLUE);
         btnField.setText(buttonName);
-        btnField.setFont(new Font("Arial" , Font.BOLD , 20));
-       
-        return btnField;      
+        btnField.setFont(new Font("Arial", Font.BOLD, 20));
+
+        return btnField;
+
     }
-    }
+}
 

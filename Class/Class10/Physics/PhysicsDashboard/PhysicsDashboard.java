@@ -3,6 +3,9 @@ package Class.Class10.Physics.PhysicsDashboard;
 import javax.swing.*;
 import java.awt.*;
 import Class.Class10.Class10Dashboard.*;
+import Class.Class10.Physics.Medium.MediumQuestion;
+import Class.Class10.Physics.Hard.DifficultQuestion;
+import Class.Class10.Physics.Easy.EasyQuestion;
 
 public class PhysicsDashboard {
 
@@ -43,19 +46,19 @@ public class PhysicsDashboard {
 
         JButton button6 = buttonField("Easy Test", 80);
         button6.addActionListener(e -> {
-
+            new EasyQuestion();
             frame.dispose();
         });
 
         JButton button7 = buttonField("Medium Test", 120);
         button7.addActionListener(e -> {
-
+            new MediumQuestion();
             frame.dispose();
         });
 
         JButton button8 = buttonField("Difficult Test", 160);
         button8.addActionListener(e -> {
-
+            new DifficultQuestion();
             frame.dispose();
         });
 
@@ -86,4 +89,3 @@ public class PhysicsDashboard {
 
     }
 }
-

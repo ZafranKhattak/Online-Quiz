@@ -1,6 +1,6 @@
 package Class.Class8.Maths.Easy;
 
-import Class.Class8.Maths.MathsDashboard.MathsDashboard;
+import Class.Class8.Maths.MathDashboard.MathsDashboard;
 import javax.swing.*;
 import java.awt.*;
 

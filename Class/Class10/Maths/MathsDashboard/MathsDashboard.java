@@ -1,13 +1,12 @@
-package Class.Class8.Maths.MathsDashboard;
+package Class.Class10.Maths.MathsDashboard;
 
 
 import javax.swing.*;
 import java.awt.*;
-
-import Class.Class8.Maths.Hard.DifficultQuestion;
-import Class.Class8.Maths.Easy.EasyQuestion;
-import Class.Class8.Class8Dashboard.*;
-import Class.Class8.Maths.Medium.MediumQuestion;
+import Class.Class10.Class10Dashboard.*;
+import Class.Class10.Maths.Easy.EasyQuestion;
+import Class.Class10.Maths.Medium.MediumQuestion;
+import Class.Class10.Maths.Hard.DifficultQuestion;
 
 public class MathsDashboard {
     public MathsDashboard() {
@@ -53,20 +52,20 @@ public class MathsDashboard {
 
         JButton button7 = buttonField("Medium Test", 120);
         button7.addActionListener(e -> {
-            new MediumQuestion();
+new MediumQuestion();
             frame.dispose();
         });
 
         JButton button8 = buttonField("Difficult Test", 160);
         button8.addActionListener(e -> {
-            new DifficultQuestion();
+new DifficultQuestion();
             frame.dispose();
         });
 
         JButton backButton = buttonField("Back", 380);
         backButton.setBackground(Color.RED);
         backButton.addActionListener(e -> {
-            new Class8Dashboard();
+            new Class10Dashboard();
             frame.dispose();
         });
         panel.add(button6);

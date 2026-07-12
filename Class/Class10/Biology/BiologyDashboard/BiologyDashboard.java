@@ -1,6 +1,9 @@
 package Class.Class10.Biology.BiologyDashboard;
 
-import Class.Class10.Class10Dashboard.*;
+import Class.Class10.Biology.Hard.DifficultQuestion;
+import Class.Class10.Biology.Easy.EasyQuestion;
+import Class.Class10.Biology.Medium.MediumQuestion;
+import Class.Class9.Class9Dashboard.*;
 import javax.swing.*;
 import java.awt.*;
 
@@ -44,26 +47,26 @@ public class BiologyDashboard {
 
         JButton button6 = buttonField("Easy Test", 80);
         button6.addActionListener(e -> {
-
+            new EasyQuestion();
             frame.dispose();
         });
 
         JButton button7 = buttonField("Medium Test", 120);
         button7.addActionListener(e -> {
-
+            new MediumQuestion();
             frame.dispose();
         });
 
         JButton button8 = buttonField("Difficult Test", 160);
         button8.addActionListener(e -> {
-
+            new DifficultQuestion();
             frame.dispose();
         });
 
         JButton backButton = buttonField("Back", 380);
         backButton.setBackground(Color.RED);
         backButton.addActionListener(e -> {
-            new Class10Dashboard();
+            new Class9Dashboard();
             frame.dispose();
         });
         panel.add(button6);

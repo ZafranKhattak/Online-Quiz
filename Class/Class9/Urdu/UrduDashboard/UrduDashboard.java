@@ -2,6 +2,10 @@ package Class.Class9.Urdu.UrduDashboard;
 
 import java.awt.*;
 import javax.swing.*;
+
+import Class.Class9.Urdu.Easy.EasyQuestion;
+import Class.Class9.Urdu.Medium.MediumQuestion;
+import Class.Class9.Urdu.Hard.DifficultQuestion;
 import Class.Class9.Class9Dashboard.Class9Dashboard;
 
 public class UrduDashboard {
@@ -43,19 +47,19 @@ public class UrduDashboard {
 
         JButton button6 = buttonField("Easy Test", 80);
         button6.addActionListener(e -> {
-
+            new EasyQuestion();
             frame.dispose();
         });
 
         JButton button7 = buttonField("Medium Test", 120);
         button7.addActionListener(e -> {
-
+            new MediumQuestion();
             frame.dispose();
         });
 
         JButton button8 = buttonField("Difficult Test", 160);
         button8.addActionListener(e -> {
-
+            new DifficultQuestion();
             frame.dispose();
         });
 

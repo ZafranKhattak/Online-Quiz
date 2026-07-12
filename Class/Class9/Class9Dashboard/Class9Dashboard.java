@@ -5,9 +5,9 @@ import MainDashboard.MainDashboard;
 import java.awt.*;
 import Class.Class9.Biology.BiologyDashboard.BiologyDashboard;
 import Class.Class9.Urdu.UrduDashboard.UrduDashboard;
-import Class.Class9.Math.MathDashboard.MathDashboard;
 import Class.Class9.Physics.PhysicsDashboard.PhysicsDashboard;
 import Class.Class9.Chemistry.ChemistryDashboard.ChemistryDashboard;
+import Class.Class9.Maths.MathsDashboard.MathsDashboard;
 
 public class Class9Dashboard {
 
@@ -65,7 +65,7 @@ public class Class9Dashboard {
         });
         JButton button9 = buttonField("Math", 200);
         button9.addActionListener(e->{
-            new MathDashboard();
+            new MathsDashboard();
             frame.dispose();;
         });
         JButton button10 = buttonField("Urdu", 240);

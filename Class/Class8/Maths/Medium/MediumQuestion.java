@@ -1,6 +1,6 @@
 package Class.Class8.Maths.Medium;
 
-import Class.Class8.Maths.MathsDashboard.MathsDashboard;
+import Class.Class8.Maths.MathDashboard.MathsDashboard;
 import javax.swing.*;
 import java.awt.*;
 

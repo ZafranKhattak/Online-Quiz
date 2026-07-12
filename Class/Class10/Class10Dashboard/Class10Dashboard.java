@@ -5,9 +5,10 @@ import javax.swing.*;
 import MainDashboard.MainDashboard;
 import Class.Class10.Biology.BiologyDashboard.BiologyDashboard;
 import Class.Class10.Urdu.UrduDashboard.UrduDashboard;
-import Class.Class10.Math.MathDashboard.MathDashboard;
 import Class.Class10.Physics.PhysicsDashboard.PhysicsDashboard;
 import Class.Class10.Chemistry.ChemistryDashboard.ChemistryDashboard;
+import Class.Class10.Maths.MathsDashboard.MathsDashboard;
+
 import java.awt.*;
 
 public class Class10Dashboard {
@@ -66,7 +67,7 @@ public class Class10Dashboard {
         });
         JButton button9 = buttonField("Math", 200);
         button9.addActionListener(e->{
-            new MathDashboard();
+            new MathsDashboard();
             frame.dispose();;
         });
         JButton button10 = buttonField("Urdu", 240);

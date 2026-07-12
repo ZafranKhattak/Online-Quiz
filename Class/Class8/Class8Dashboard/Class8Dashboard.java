@@ -5,7 +5,7 @@ import Class.Class8.Urdu.UrduDashboard.UrduDashboard;
 import Class.Class8.Physics.PhysicsDashboard.PhysicsDashboard;
 import Class.Class8.GeneralScience.GeneralScienceDashboard.GeneralScienceDashboard;
 import Class.Class8.GeoGraphy.GeoGraphyDashboard.GeoGraphyDashboard;
-import Class.Class8.Maths.MathsDashboard.MathsDashboard;
+import Class.Class8.Maths.MathDashboard.MathsDashboard;
 import MainDashboard.MainDashboard;
 
 import java.awt.*;
