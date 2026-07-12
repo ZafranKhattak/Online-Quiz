@@ -3,8 +3,10 @@ package Class.Class11.ICS.ICSDashboard;
 import javax.swing.ImageIcon;
 import javax.swing.*;
 import java.awt.*;
-
+import Class.Class11.ICS.Medium.MediumQuestion;
 import Class.Class11.Class11Dashboard.Class11Dashboard;
+import Class.Class11.ICS.Easy.EasyQuestion;
+import Class.Class11.ICS.Hard.DifficultQuestion;
 
 public class ICSDashboard {
 
@@ -45,19 +47,19 @@ public class ICSDashboard {
 
         JButton button6 = buttonField("Easy Test", 80);
         button6.addActionListener(e -> {
-
+            new EasyQuestion();
             frame.dispose();
         });
 
         JButton button7 = buttonField("Medium Test", 120);
         button7.addActionListener(e -> {
-
+            new MediumQuestion();
             frame.dispose();
         });
 
         JButton button8 = buttonField("Difficult Test", 160);
         button8.addActionListener(e -> {
-
+            new DifficultQuestion();
             frame.dispose();
         });
 

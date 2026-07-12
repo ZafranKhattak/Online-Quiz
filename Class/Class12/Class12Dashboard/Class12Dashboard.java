@@ -3,10 +3,10 @@ package Class.Class12.Class12Dashboard;
 import javax.swing.*;
 import Class.Class12.Biology.BiologyDashboard.BiologyDashboard;
 import Class.Class12.Urdu.UrduDashboard.UrduDashboard;
-import Class.Class12.Math.MathDashboard.MathDashboard;
 import Class.Class12.Physics.PhysicsDashboard.PhysicsDashboard;
 import Class.Class12.Chemistry.ChemistryDashboard.ChemistryDashboard;
 import Class.Class12.ICS.ICSDashboard.ICSDashboard;
+import Class.Class12.Maths.MathsDashboard.MathsDashboard;
 import MainDashboard.MainDashboard;
 
 import java.awt.*;
@@ -42,7 +42,7 @@ public class Class12Dashboard {
         // ================== WELCOME NOTE ================== //
 
         JLabel welcomeLabel = new JLabel();
-        welcomeLabel.setText("<html><u>Welcome To 12th</u></html>");
+        welcomeLabel.setText("<html><u>Welcome To 11th</u></html>");
         welcomeLabel.setForeground(Color.WHITE);
         welcomeLabel.setFont(new Font("ARIAL", Font.BOLD, 18));
         welcomeLabel.setLayout(null);
@@ -67,7 +67,7 @@ public class Class12Dashboard {
         });
         JButton button9 = buttonField("Math", 200);
         button9.addActionListener(e->{
-            new MathDashboard();
+            new MathsDashboard();
             frame.dispose();;
         });
         JButton button10 = buttonField("Urdu", 240);

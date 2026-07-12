@@ -3,10 +3,10 @@ package Class.Class11.Class11Dashboard;
 import javax.swing.*;
 import Class.Class11.Biology.BiologyDashboard.BiologyDashboard;
 import Class.Class11.Urdu.UrduDashboard.UrduDashboard;
-import Class.Class11.Math.MathDashboard.MathDashboard;
 import Class.Class11.Physics.PhysicsDashboard.PhysicsDashboard;
 import Class.Class11.Chemistry.ChemistryDashboard.ChemistryDashboard;
 import Class.Class11.ICS.ICSDashboard.ICSDashboard;
+import Class.Class11.Maths.MathsDashboard.MathsDashboard;
 import MainDashboard.MainDashboard;
 
 import java.awt.*;
@@ -67,7 +67,7 @@ public class Class11Dashboard {
         });
         JButton button9 = buttonField("Math", 200);
         button9.addActionListener(e->{
-            new MathDashboard();
+            new MathsDashboard();
             frame.dispose();;
         });
         JButton button10 = buttonField("Urdu", 240);

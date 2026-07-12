@@ -3,12 +3,14 @@ package Class.Class12.ICS.ICSDashboard;
 import javax.swing.ImageIcon;
 import javax.swing.*;
 import java.awt.*;
+import Class.Class12.ICS.Medium.MediumQuestion;
 import Class.Class12.Class12Dashboard.Class12Dashboard;
+import Class.Class12.ICS.Easy.EasyQuestion;
+import Class.Class12.ICS.Hard.DifficultQuestion;
 
 public class ICSDashboard {
-    
-   public ICSDashboard()
-    {
+
+    public ICSDashboard() {
         // ==================== JFRAME ====================
         JFrame frame = new JFrame("Dashboard");
         frame.setVisible(true);
@@ -45,19 +47,19 @@ public class ICSDashboard {
 
         JButton button6 = buttonField("Easy Test", 80);
         button6.addActionListener(e -> {
-
+new EasyQuestion();
             frame.dispose();
         });
 
         JButton button7 = buttonField("Medium Test", 120);
         button7.addActionListener(e -> {
-
+new MediumQuestion();
             frame.dispose();
         });
 
         JButton button8 = buttonField("Difficult Test", 160);
         button8.addActionListener(e -> {
-
+new DifficultQuestion();
             frame.dispose();
         });
 
@@ -87,4 +89,4 @@ public class ICSDashboard {
         return btnField;
 
     }
-    }
+}
