@@ -1,12 +1,14 @@
-package Class.Class7.Math.MathDashboard;
+package Class.Class7.Math.MathsDashboard;
 
-
+import Class.Class7.Math.Easy.EasyQuestion;
+import Class.Class7.Math.Medium.MediumQuestion;
+import Class.Class7.Math.Hard.DifficultQuestion;
 import javax.swing.*;
 import java.awt.*;
 import Class.Class7.Class7Dashboard.*;
 
-public class MathDashboard {
-    public MathDashboard() {
+public class MathsDashboard {
+    public MathsDashboard() {
         // ==================== JFRAME ====================
         JFrame frame = new JFrame("Dashboard");
         frame.setVisible(true);
@@ -43,19 +45,19 @@ public class MathDashboard {
 
         JButton button6 = buttonField("Easy Test", 80);
         button6.addActionListener(e -> {
-
+            new EasyQuestion();
             frame.dispose();
         });
 
         JButton button7 = buttonField("Medium Test", 120);
         button7.addActionListener(e -> {
-
+            new MediumQuestion();
             frame.dispose();
         });
 
         JButton button8 = buttonField("Difficult Test", 160);
         button8.addActionListener(e -> {
-
+            new DifficultQuestion();
             frame.dispose();
         });
 

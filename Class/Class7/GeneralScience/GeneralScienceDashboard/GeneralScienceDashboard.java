@@ -1,6 +1,10 @@
 package Class.Class7.GeneralScience.GeneralScienceDashboard;
 
 import Class.Class7.Class7Dashboard.*;
+import Class.Class7.GeneralScience.Easy.EasyQuestion;
+import Class.Class7.GeneralScience.Hard.DifficultQuestion;
+import Class.Class7.GeneralScience.Medium.MediumQuestion;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -44,19 +48,19 @@ public class GeneralScienceDashboard {
 
         JButton button6 = buttonField("Easy Test", 80);
         button6.addActionListener(e -> {
-            new GeneralScienceDashboard();
+            new EasyQuestion();
             frame.dispose();
         });
 
         JButton button7 = buttonField("Medium Test", 120);
         button7.addActionListener(e -> {
-            new GeneralScienceDashboard();
+            new MediumQuestion();
             frame.dispose();
         });
 
         JButton button8 = buttonField("Difficult Test", 160);
         button8.addActionListener(e -> {
-            new GeneralScienceDashboard();
+            new DifficultQuestion();
             frame.dispose();
         });
 

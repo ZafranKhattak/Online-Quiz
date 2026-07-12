@@ -6,7 +6,7 @@ import Class.Class7.Arabic.ArabicDashboard.ArabicDashboard;
 import Class.Class7.English.EnglishDashboard.EnglishDashboard;
 import Class.Class7.GeneralScience.GeneralScienceDashboard.GeneralScienceDashboard;
 import Class.Class7.GeoGraphy.GeoGraphyDashboard.GeoGraphyDashboard;
-import Class.Class7.Math.MathDashboard.MathDashboard;
+import Class.Class7.Math.MathsDashboard.MathsDashboard;
 import Class.Class7.Urdu.UrduDashboard.UrduDashboard;
 import MainDashboard.MainDashboard;
 import java.awt.*;
@@ -53,7 +53,7 @@ public class Class7Dashboard {
         // ===================== BUTTON ==================== //
         JButton button6 = buttonField("General Science", 80);
         button6.addActionListener(e->{
-            new ArabicDashboard();
+            new GeneralScienceDashboard();
             frame.dispose();;
         });
         JButton button7 = buttonField("GeoGraphy", 120);
@@ -63,12 +63,12 @@ public class Class7Dashboard {
         });
         JButton button8 = buttonField("Arabic", 160);
         button8.addActionListener(e->{
-            new GeneralScienceDashboard();
+            new ArabicDashboard();
             frame.dispose();;
         });
         JButton button9 = buttonField("Math", 200);
         button9.addActionListener(e->{
-            new MathDashboard();
+            new MathsDashboard();
             frame.dispose();;
         });
         JButton button10 = buttonField("Urdu", 240);
