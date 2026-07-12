@@ -2,10 +2,10 @@ package Class.Class8.Class8Dashboard;
 
 import javax.swing.*;
 import Class.Class8.Urdu.UrduDashboard.UrduDashboard;
-import Class.Class8.Math.MathDashboard.MathDashboard;
 import Class.Class8.Physics.PhysicsDashboard.PhysicsDashboard;
 import Class.Class8.GeneralScience.GeneralScienceDashboard.GeneralScienceDashboard;
 import Class.Class8.GeoGraphy.GeoGraphyDashboard.GeoGraphyDashboard;
+import Class.Class8.Maths.MathsDashboard.MathsDashboard;
 import MainDashboard.MainDashboard;
 
 import java.awt.*;
@@ -66,7 +66,7 @@ public class Class8Dashboard {
         });
         JButton button9 = buttonField("Math", 200);
         button9.addActionListener(e->{
-            new MathDashboard();
+            new MathsDashboard();
             frame.dispose();;
         });
         JButton button10 = buttonField("Urdu", 240);

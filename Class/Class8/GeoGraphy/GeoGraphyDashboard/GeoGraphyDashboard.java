@@ -2,6 +2,10 @@ package Class.Class8.GeoGraphy.GeoGraphyDashboard;
 
 import javax.swing.*;
 import java.awt.*;
+
+import Class.Class8.GeoGraphy.Easy.EasyQuestion;
+import Class.Class8.GeoGraphy.Medium.MediumQuestion;
+import Class.Class8.GeoGraphy.Hard.DifficultQuestion;
 import Class.Class8.Class8Dashboard.*;
 
 public class GeoGraphyDashboard {
@@ -45,20 +49,19 @@ public class GeoGraphyDashboard {
 
         JButton button6 = buttonField("Easy Test", 80);
         button6.addActionListener(e->{
-                
+                new EasyQuestion();                
                 frame.dispose();
         });
 
         JButton button7 = buttonField("Medium Test", 120);
         button7.addActionListener(e->{
-
-           
+            new MediumQuestion();
             frame.dispose();
         });
 
         JButton button8 = buttonField("Difficult Test", 160);
         button8.addActionListener(e->{
-           
+           new DifficultQuestion();
             frame.dispose();
         });
 

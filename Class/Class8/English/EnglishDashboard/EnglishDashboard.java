@@ -2,7 +2,11 @@ package Class.Class8.English.EnglishDashboard;
 
 import javax.swing.*;
 import java.awt.*;
+
+import Class.Class8.English.Hard.DifficultQuestion;
+import Class.Class8.English.Easy.EasyQuestion;
 import Class.Class8.Class8Dashboard.*;
+import Class.Class8.English.Medium.MediumQuestion;
 
 public class EnglishDashboard {
 
@@ -43,19 +47,19 @@ public class EnglishDashboard {
 
         JButton button6 = buttonField("Easy Test", 80);
         button6.addActionListener(e -> {
-
+            new EasyQuestion();
             frame.dispose();
         });
 
         JButton button7 = buttonField("Medium Test", 120);
         button7.addActionListener(e -> {
-
+            new MediumQuestion();
             frame.dispose();
         });
 
         JButton button8 = buttonField("Difficult Test", 160);
         button8.addActionListener(e -> {
-
+            new DifficultQuestion();
             frame.dispose();
         });
 
