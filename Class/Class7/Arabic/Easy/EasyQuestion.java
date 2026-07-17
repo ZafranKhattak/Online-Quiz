@@ -80,14 +80,32 @@ public class EasyQuestion {
                 {"A. ہاں", "B. نہیں", "C. شاید", "D. کیوں"}
         };
 
-        for (int i = 0; i < questions.length; i++) {
-            JLabel label2 = new JLabel(questions[i]);
-            label2.setBounds(80, 1 + (i * 60 + 100), 950, 30);
-            label2.setForeground(Color.GREEN);
-            label2.setFont(new Font("Arial", Font.BOLD, 16));
-            panel.add(label2);
-        }
+        int correctAnswers[] = {
+                1,  // Q1: "مُدَرِّس" کا مؤنث ہے: B. مدرسة
+                0,  // Q2: "کتاب" کی جمع ہے: A. کتب
+                0,  // Q3: "أنا" کس قسم کا ضمیر ہے؟ A. متکلم
+                1,  // Q4: "هو" کس کے لیے استعمال ہوتا ہے؟ B. مرد
+                1,  // Q5: "بيت" کا مطلب ہے: B. گھر
+                1,  // Q6: "أنت" کس کے لیے ہے؟ B. تم (مرد)
+                2,  // Q7: المبتدأ کس حالت میں ہوتا ہے؟ C. مرفوع
+                1,  // Q8: "مسلم" کی جمع ہے: B. مسلمون
+                1,  // Q9: "هي" کس کے لیے استعمال ہوتا ہے؟ B. عورت
+                1,  // Q10: فعل ماضی کی پہچان ہے: B. كتب
+                1,  // Q11: "قلم" کا مطلب ہے: B. قلم
+                1,  // Q12: "نعم" کا مطلب ہے: B. ہاں
+                2,  // Q13: ضمیر غائب کی مثال ہے: C. هو
+                1,  // Q14: "شكراً" کا مطلب ہے: B. شکریہ
+                1,  // Q15: "كتابان" ہے: B. مثنی
+                2,  // Q16: "في" کیا ہے؟ C. حرف جر
+                1,  // Q17: "جميل" کا مطلب ہے: B. خوبصورت
+                1,  // Q18: "نحن" کس کے لیے ہے؟ B. ہم
+                2,  // Q19: "مدرسة" کا مطلب ہے: C. اسکول
+                1   // Q20: "لا" کا مطلب ہے: B. نہیں
+        };
 
+        // Create radio buttons and store them in a 2D array
+        JRadioButton[][] radioButtons = new JRadioButton[questions.length][4];
+        
         for (int i = 0; i < options.length; i++) {
             ButtonGroup group = new ButtonGroup();
             for (int j = 0; j < 4; j++) {
@@ -96,10 +114,18 @@ public class EasyQuestion {
                 btn.setForeground(Color.WHITE);
                 btn.setBackground(Color.BLACK);
                 btn.setFont(new Font("Arial", Font.PLAIN, 14));
+                btn.setActionCommand(String.valueOf(j));
                 group.add(btn);
                 panel.add(btn);
+                radioButtons[i][j] = btn;
             }
         }
+
+        JLabel resultLabel = new JLabel();
+        resultLabel.setBounds(80, 1280, 500, 30);
+        resultLabel.setForeground(Color.YELLOW);
+        resultLabel.setFont(new Font("Arial", Font.BOLD, 16));
+        panel.add(resultLabel);
 
         JButton buttonSubmit = new JButton("Submit");
         buttonSubmit.setLayout(null);
@@ -108,8 +134,52 @@ public class EasyQuestion {
         buttonSubmit.setForeground(Color.BLACK);
         buttonSubmit.setFont(new Font("Arial", Font.BOLD, 15));
         buttonSubmit.addActionListener(e -> {
-            JOptionPane.showConfirmDialog(null, "You want to submit");
-            JOptionPane.showMessageDialog(null, "Submitted Successfully");
+            int score = 0;
+            int totalQuestions = questions.length;
+            
+            // Check each question
+            for (int i = 0; i < totalQuestions; i++) {
+                for (int j = 0; j < 4; j++) {
+                    if (radioButtons[i][j].isSelected() && j == correctAnswers[i]) {
+                        score++;
+                        break;
+                    }
+                }
+            }
+            
+            int confirm = JOptionPane.showConfirmDialog(null, 
+                "Are you sure you want to submit?", 
+                "Confirm Submission", 
+                JOptionPane.YES_NO_OPTION);
+                
+            if (confirm == JOptionPane.YES_OPTION) {
+                double percentage = (double) score / totalQuestions * 100;
+                String grade;
+                if (percentage >= 80) {
+                    grade = "Excellent!";
+                } else if (percentage >= 60) {
+                    grade = "Good!";
+                } else if (percentage >= 40) {
+                    grade = "Fair";
+                } else {
+                    grade = "Needs Improvement";
+                }
+                
+                String message = String.format(
+                    "<html><body style='text-align: center;'>" +
+                    "<h2>Quiz Results</h2>" +
+                    "<p>Total Questions: %d</p>" +
+                    "<p>Correct Answers: %d</p>" +
+                    "<p>Wrong Answers: %d</p>" +
+                    "<p>Percentage: %.1f%%</p>" +
+                    "<p>Grade: %s</p>" +
+                    "</body></html>",
+                    totalQuestions, score, totalQuestions - score, percentage, grade
+                );
+                
+                JOptionPane.showMessageDialog(null, message, "Quiz Results", JOptionPane.INFORMATION_MESSAGE);
+                resultLabel.setText(String.format("Score: %d/%d (%.1f%%)", score, totalQuestions, percentage));
+            }
         });
         panel.add(buttonSubmit);
 
