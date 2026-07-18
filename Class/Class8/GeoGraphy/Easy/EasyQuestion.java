@@ -58,35 +58,53 @@ public class EasyQuestion {
         };
 
         String options[][] = {
-                {"A. A gulf", "B. A bay", "C. An island", "D. A peninsula"},
-                {"A. Atlantic Ocean", "B. Pacific Ocean", "C. Indian Ocean", "D. Arctic Ocean"},
-                {"A. Earth", "B. Mars", "C. Moon", "D. Sun"},
-                {"A. Study", "B. Earth", "C. Water", "D. Air"},
-                {"A. 30%", "B. 50%", "C. 62%", "D. 70%"},
-                {"A. English", "B. Greek", "C. Persian", "D. Urdu"},
-                {"A. Solar energy", "B. Wind energy", "C. Coal", "D. Hydropower"},
-                {"A. Jupiter", "B. Earth", "C. Mercury", "D. Venus"},
-                {"A. Tropical region", "B. Temperate region", "C. Polar region", "D. Equatorial region"},
-                {"A. Cartography", "B. Geology", "C. Climatology", "D. Oceanography"},
-                {"A. Wood", "B. Petroleum", "C. Water", "D. Sunlight"},
-                {"A. Jupiter", "B. Earth", "C. Mars", "D. Venus"},
-                {"A. Geology", "B. Meteorology", "C. Oceanography", "D. Cartography"},
-                {"A. Yamuna", "B. Ganges", "C. Beas", "D. Sutlej"},
-                {"A. Faisalabad", "B. Lahore", "C. Multan", "D. Rawalpindi"},
-                {"A. Fishing", "B. Mining", "C. Agriculture", "D. Manufacturing"},
-                {"A. 150 million km", "B. 300 million km", "C. 500 million km", "D. 720 million km"},
-                {"A. Geology", "B. Meteorology", "C. Oceanography", "D. Cartography"},
-                {"A. Weather", "B. Global warming", "C. Climate", "D. Climate change"},
-                {"A. Atmosphere", "B. Hydrosphere", "C. Biosphere", "D. Lithosphere"}
+                { "A. A gulf", "B. A bay", "C. An island", "D. A peninsula" },
+                { "A. Atlantic Ocean", "B. Pacific Ocean", "C. Indian Ocean", "D. Arctic Ocean" },
+                { "A. Earth", "B. Mars", "C. Moon", "D. Sun" },
+                { "A. Study", "B. Earth", "C. Water", "D. Air" },
+                { "A. 30%", "B. 50%", "C. 62%", "D. 70%" },
+                { "A. English", "B. Greek", "C. Persian", "D. Urdu" },
+                { "A. Solar energy", "B. Wind energy", "C. Coal", "D. Hydropower" },
+                { "A. Jupiter", "B. Earth", "C. Mercury", "D. Venus" },
+                { "A. Tropical region", "B. Temperate region", "C. Polar region", "D. Equatorial region" },
+                { "A. Cartography", "B. Geology", "C. Climatology", "D. Oceanography" },
+                { "A. Wood", "B. Petroleum", "C. Water", "D. Sunlight" },
+                { "A. Jupiter", "B. Earth", "C. Mars", "D. Venus" },
+                { "A. Geology", "B. Meteorology", "C. Oceanography", "D. Cartography" },
+                { "A. Yamuna", "B. Ganges", "C. Beas", "D. Sutlej" },
+                { "A. Faisalabad", "B. Lahore", "C. Multan", "D. Rawalpindi" },
+                { "A. Fishing", "B. Mining", "C. Agriculture", "D. Manufacturing" },
+                { "A. 150 million km", "B. 300 million km", "C. 500 million km", "D. 720 million km" },
+                { "A. Geology", "B. Meteorology", "C. Oceanography", "D. Cartography" },
+                { "A. Weather", "B. Global warming", "C. Climate", "D. Climate change" },
+                { "A. Atmosphere", "B. Hydrosphere", "C. Biosphere", "D. Lithosphere" }
         };
 
-        for (int i = 0; i < questions.length; i++) {
-            JLabel label2 = new JLabel(questions[i]);
-            label2.setBounds(80, 1 + (i * 60 + 100), 950, 30);
-            label2.setForeground(Color.GREEN);
-            label2.setFont(new Font("Arial", Font.BOLD, 16));
-            panel.add(label2);
-        }
+        int correctAnswers[] = {
+                2, // Q1: An island
+                1, // Q2: Pacific Ocean
+                3, // Q3: Sun
+                1, // Q4: Earth
+                3, // Q5: 70%
+                1, // Q6: Greek
+                2, // Q7: Coal
+                2, // Q8: Mercury
+                0, // Q9: Tropical region
+                0, // Q10: Cartography
+                1, // Q11: Petroleum
+                0, // Q12: Jupiter
+                1, // Q13: Meteorology
+                2, // Q14: Beas
+                1, // Q15: Lahore
+                2, // Q16: Agriculture
+                0, // Q17: 150 million km
+                2, // Q18: Oceanography
+                1, // Q19: Global warming
+                3 // Q20: Lithosphere
+        };
+
+        // Create radio buttons and store them in a 2D array
+        JRadioButton[][] radioButtons = new JRadioButton[questions.length][4];
 
         for (int i = 0; i < options.length; i++) {
             ButtonGroup group = new ButtonGroup();
@@ -96,10 +114,18 @@ public class EasyQuestion {
                 btn.setForeground(Color.WHITE);
                 btn.setBackground(Color.BLACK);
                 btn.setFont(new Font("Arial", Font.PLAIN, 14));
+                btn.setActionCommand(String.valueOf(j));
                 group.add(btn);
                 panel.add(btn);
+                radioButtons[i][j] = btn;
             }
         }
+
+        JLabel resultLabel = new JLabel();
+        resultLabel.setBounds(80, 1280, 500, 30);
+        resultLabel.setForeground(Color.YELLOW);
+        resultLabel.setFont(new Font("Arial", Font.BOLD, 16));
+        panel.add(resultLabel);
 
         JButton buttonSubmit = new JButton("Submit");
         buttonSubmit.setLayout(null);
@@ -108,8 +134,51 @@ public class EasyQuestion {
         buttonSubmit.setForeground(Color.BLACK);
         buttonSubmit.setFont(new Font("Arial", Font.BOLD, 15));
         buttonSubmit.addActionListener(e -> {
-            JOptionPane.showConfirmDialog(null, "You want to submit");
-            JOptionPane.showMessageDialog(null, "Submitted Successfully");
+            int score = 0;
+            int totalQuestions = questions.length;
+
+            // Check each question
+            for (int i = 0; i < totalQuestions; i++) {
+                for (int j = 0; j < 4; j++) {
+                    if (radioButtons[i][j].isSelected() && j == correctAnswers[i]) {
+                        score++;
+                        break;
+                    }
+                }
+            }
+
+            int confirm = JOptionPane.showConfirmDialog(null,
+                    "Are you sure you want to submit?",
+                    "Confirm Submission",
+                    JOptionPane.YES_NO_OPTION);
+
+            if (confirm == JOptionPane.YES_OPTION) {
+                double percentage = (double) score / totalQuestions * 100;
+                String grade;
+                if (percentage >= 80) {
+                    grade = "Excellent!";
+                } else if (percentage >= 60) {
+                    grade = "Good!";
+                } else if (percentage >= 40) {
+                    grade = "Fair";
+                } else {
+                    grade = "Needs Improvement";
+                }
+
+                String message = String.format(
+                        "<html><body style='text-align: center;'>" +
+                                "<h2>Quiz Results</h2>" +
+                                "<p>Total Questions: %d</p>" +
+                                "<p>Correct Answers: %d</p>" +
+                                "<p>Wrong Answers: %d</p>" +
+                                "<p>Percentage: %.1f%%</p>" +
+                                "<p>Grade: %s</p>" +
+                                "</body></html>",
+                        totalQuestions, score, totalQuestions - score, percentage, grade);
+
+                JOptionPane.showMessageDialog(null, message, "Quiz Results", JOptionPane.INFORMATION_MESSAGE);
+                resultLabel.setText(String.format("Score: %d/%d (%.1f%%)", score, totalQuestions, percentage));
+            }
         });
         panel.add(buttonSubmit);
 

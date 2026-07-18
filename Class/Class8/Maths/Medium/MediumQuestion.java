@@ -58,35 +58,55 @@ public class MediumQuestion {
         };
 
         String options[][] = {
-                {"A. Commutative property", "B. Associative property", "C. Distributive property", "D. Identity property"},
-                {"A. Commutative property", "B. Associative property", "C. Distributive property", "D. Identity property"},
-                {"A. 10", "B. 11", "C. 12", "D. 13"},
-                {"A. 3", "B. 4", "C. 5", "D. 6"},
-                {"A. 11", "B. 12", "C. 13", "D. 14"},
-                {"A. Rectangle", "B. Rhombus", "C. Square", "D. Trapezium"},
-                {"A. 3", "B. 4", "C. 5", "D. 6"},
-                {"A. 4", "B. 6", "C. 8", "D. 10"},
-                {"A. 12", "B. 16", "C. 20", "D. 25"},
-                {"A. 13 cm", "B. 20 cm", "C. 26 cm", "D. 40 cm"},
-                {"A. 20 cm²", "B. 30 cm²", "C. 40 cm²", "D. 60 cm²"},
-                {"A. Rs. 50", "B. Rs. 100", "C. Rs. 150", "D. Rs. 200"},
-                {"A. 10 and 11", "B. 9 and 12", "C. 8 and 13", "D. 7 and 14"},
-                {"A. 32", "B. 64", "C. 128", "D. 256"},
-                {"A. 25%", "B. 50%", "C. 75%", "D. 100%"},
-                {"A. Two rectangles", "B. Two triangles", "C. Four triangles", "D. Two squares"},
-                {"A. 5", "B. 10", "C. 15", "D. 20"},
-                {"A. Parallelogram", "B. Rhombus", "C. Trapezium", "D. Kite"},
-                {"A. 8", "B. -8", "C. 6", "D. -6"},
-                {"A. 2", "B. 4", "C. 6", "D. 9"}
+                { "A. Commutative property", "B. Associative property", "C. Distributive property",
+                        "D. Identity property" },
+                { "A. Commutative property", "B. Associative property", "C. Distributive property",
+                        "D. Identity property" },
+                { "A. 10", "B. 11", "C. 12", "D. 13" },
+                { "A. 3", "B. 4", "C. 5", "D. 6" },
+                { "A. 11", "B. 12", "C. 13", "D. 14" },
+                { "A. Rectangle", "B. Rhombus", "C. Square", "D. Trapezium" },
+                { "A. 3", "B. 4", "C. 5", "D. 6" },
+                { "A. 4", "B. 6", "C. 8", "D. 10" },
+                { "A. 12", "B. 16", "C. 20", "D. 25" },
+                { "A. 13 cm", "B. 20 cm", "C. 26 cm", "D. 40 cm" },
+                { "A. 20 cm²", "B. 30 cm²", "C. 40 cm²", "D. 60 cm²" },
+                { "A. Rs. 50", "B. Rs. 100", "C. Rs. 150", "D. Rs. 200" },
+                { "A. 10 and 11", "B. 9 and 12", "C. 8 and 13", "D. 7 and 14" },
+                { "A. 32", "B. 64", "C. 128", "D. 256" },
+                { "A. 25%", "B. 50%", "C. 75%", "D. 100%" },
+                { "A. Two rectangles", "B. Two triangles", "C. Four triangles", "D. Two squares" },
+                { "A. 5", "B. 10", "C. 15", "D. 20" },
+                { "A. Parallelogram", "B. Rhombus", "C. Trapezium", "D. Kite" },
+                { "A. 8", "B. -8", "C. 6", "D. -6" },
+                { "A. 2", "B. 4", "C. 6", "D. 9" }
         };
 
-        for (int i = 0; i < questions.length; i++) {
-            JLabel label2 = new JLabel(questions[i]);
-            label2.setBounds(80, 1 + (i * 60 + 100), 950, 30);
-            label2.setForeground(Color.GREEN);
-            label2.setFont(new Font("Arial", Font.BOLD, 16));
-            panel.add(label2);
-        }
+        int correctAnswers[] = {
+                0, // Q1: Commutative property
+                1, // Q2: Associative property
+                2, // Q3: 12
+                2, // Q4: 5
+                2, // Q5: 13
+                1, // Q6: Rhombus
+                2, // Q7: 5
+                2, // Q8: 8
+                3, // Q9: 25
+                2, // Q10: 26 cm
+                1, // Q11: 30 cm²
+                1, // Q12: Rs. 100
+                0, // Q13: 10 and 11
+                1, // Q14: 64
+                2, // Q15: 75%
+                1, // Q16: Two triangles
+                2, // Q17: 15
+                2, // Q18: Trapezium
+                1, // Q19: -8
+                0 // Q20: 2
+        };
+
+        // Create radio buttons and store them in a 2D array
+        JRadioButton[][] radioButtons = new JRadioButton[questions.length][4];
 
         for (int i = 0; i < options.length; i++) {
             ButtonGroup group = new ButtonGroup();
@@ -96,10 +116,18 @@ public class MediumQuestion {
                 btn.setForeground(Color.WHITE);
                 btn.setBackground(Color.BLACK);
                 btn.setFont(new Font("Arial", Font.PLAIN, 14));
+                btn.setActionCommand(String.valueOf(j));
                 group.add(btn);
                 panel.add(btn);
+                radioButtons[i][j] = btn;
             }
         }
+
+        JLabel resultLabel = new JLabel();
+        resultLabel.setBounds(80, 1280, 500, 30);
+        resultLabel.setForeground(Color.YELLOW);
+        resultLabel.setFont(new Font("Arial", Font.BOLD, 16));
+        panel.add(resultLabel);
 
         JButton buttonSubmit = new JButton("Submit");
         buttonSubmit.setLayout(null);
@@ -108,8 +136,51 @@ public class MediumQuestion {
         buttonSubmit.setForeground(Color.BLACK);
         buttonSubmit.setFont(new Font("Arial", Font.BOLD, 15));
         buttonSubmit.addActionListener(e -> {
-            JOptionPane.showConfirmDialog(null, "You want to submit");
-            JOptionPane.showMessageDialog(null, "Submitted Successfully");
+            int score = 0;
+            int totalQuestions = questions.length;
+
+            // Check each question
+            for (int i = 0; i < totalQuestions; i++) {
+                for (int j = 0; j < 4; j++) {
+                    if (radioButtons[i][j].isSelected() && j == correctAnswers[i]) {
+                        score++;
+                        break;
+                    }
+                }
+            }
+
+            int confirm = JOptionPane.showConfirmDialog(null,
+                    "Are you sure you want to submit?",
+                    "Confirm Submission",
+                    JOptionPane.YES_NO_OPTION);
+
+            if (confirm == JOptionPane.YES_OPTION) {
+                double percentage = (double) score / totalQuestions * 100;
+                String grade;
+                if (percentage >= 80) {
+                    grade = "Excellent!";
+                } else if (percentage >= 60) {
+                    grade = "Good!";
+                } else if (percentage >= 40) {
+                    grade = "Fair";
+                } else {
+                    grade = "Needs Improvement";
+                }
+
+                String message = String.format(
+                        "<html><body style='text-align: center;'>" +
+                                "<h2>Quiz Results</h2>" +
+                                "<p>Total Questions: %d</p>" +
+                                "<p>Correct Answers: %d</p>" +
+                                "<p>Wrong Answers: %d</p>" +
+                                "<p>Percentage: %.1f%%</p>" +
+                                "<p>Grade: %s</p>" +
+                                "</body></html>",
+                        totalQuestions, score, totalQuestions - score, percentage, grade);
+
+                JOptionPane.showMessageDialog(null, message, "Quiz Results", JOptionPane.INFORMATION_MESSAGE);
+                resultLabel.setText(String.format("Score: %d/%d (%.1f%%)", score, totalQuestions, percentage));
+            }
         });
         panel.add(buttonSubmit);
 

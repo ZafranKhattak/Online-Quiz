@@ -58,35 +58,58 @@ public class MediumQuestion {
         };
 
         String options[][] = {
-                {"A. Hazrat Umar (RA)", "B. The Quaid", "C. The Rasoolullah (ﷺ)", "D. Hazrat Asma (RA)"},
-                {"A. Ethics and Values", "B. Personality Development", "C. Peaceful co-existence", "D. Participatory Citizenship"},
-                {"A. \"All is not Lost\"", "B. \"Drug Addiction\"", "C. \"Three Days to See\"", "D. \"The Quaid's Vision and Pakistan\""},
-                {"A. Participatory Citizenship", "B. Avoiding Social Evils", "C. Environmental Education", "D. Peaceful co-existence"},
-                {"A. Space Exploration", "B. Participatory Citizenship", "C. Artificial Intelligence", "D. Robotics"},
-                {"A. Ethics and Values", "B. Role Models", "C. Peaceful co-existence", "D. Personality Development"},
-                {"A. Unit 9", "B. Unit 10", "C. Unit 11", "D. Unit 12"},
-                {"A. Adventure", "B. Sports", "C. Role Models", "D. Dignity of Labour"},
-                {"A. Unit 3: The Twins", "B. Unit 4: Let's Make our Roads Safer!", "C. Unit 6: Sports and Sportsmanship", "D. Unit 8: Settling the Quarrel"},
-                {"A. Adventure", "B. Environmental Education", "C. Personality Development", "D. Sports"},
-                {"A. Unit 9", "B. Unit 10", "C. Unit 11", "D. Unit 12"},
-                {"A. Environmental Education", "B. Adventure", "C. Sports", "D. Role Models"},
-                {"A. Unit 8", "B. Unit 9", "C. Unit 10", "D. Unit 11"},
-                {"A. Participatory Citizenship", "B. Ethics and Values", "C. Peaceful co-existence", "D. Avoiding Social Evils"},
-                {"A. Unit 1", "B. Unit 2", "C. Unit 3", "D. Unit 4"},
-                {"A. Language skills", "B. Thinking skills", "C. Analytical skills", "D. Creative skills"},
-                {"A. Sports", "B. Adventure", "C. Peaceful co-existence", "D. Environmental Education"},
-                {"A. Adventure", "B. Role Models", "C. Sports", "D. Ethics and Values"},
-                {"A. Phrase", "B. Clause", "C. Sentence", "D. Paragraph"},
-                {"A. Lenore Hetrick", "B. Henry S. Leigh", "C. William Wordsworth", "D. Robert Frost"}
+                { "A. Hazrat Umar (RA)", "B. The Quaid", "C. The Rasoolullah (ﷺ)", "D. Hazrat Asma (RA)" },
+                { "A. Ethics and Values", "B. Personality Development", "C. Peaceful co-existence",
+                        "D. Participatory Citizenship" },
+                { "A. \"All is not Lost\"", "B. \"Drug Addiction\"", "C. \"Three Days to See\"",
+                        "D. \"The Quaid's Vision and Pakistan\"" },
+                { "A. Participatory Citizenship", "B. Avoiding Social Evils", "C. Environmental Education",
+                        "D. Peaceful co-existence" },
+                { "A. Space Exploration", "B. Participatory Citizenship", "C. Artificial Intelligence", "D. Robotics" },
+                { "A. Ethics and Values", "B. Role Models", "C. Peaceful co-existence", "D. Personality Development" },
+                { "A. Unit 9", "B. Unit 10", "C. Unit 11", "D. Unit 12" },
+                { "A. Adventure", "B. Sports", "C. Role Models", "D. Dignity of Labour" },
+                { "A. Unit 3: The Twins", "B. Unit 4: Let's Make our Roads Safer!",
+                        "C. Unit 6: Sports and Sportsmanship", "D. Unit 8: Settling the Quarrel" },
+                { "A. Adventure", "B. Environmental Education", "C. Personality Development", "D. Sports" },
+                { "A. Unit 9", "B. Unit 10", "C. Unit 11", "D. Unit 12" },
+                { "A. Environmental Education", "B. Adventure", "C. Sports", "D. Role Models" },
+                { "A. Unit 8", "B. Unit 9", "C. Unit 10", "D. Unit 11" },
+                { "A. Participatory Citizenship", "B. Ethics and Values", "C. Peaceful co-existence",
+                        "D. Avoiding Social Evils" },
+                { "A. Unit 1", "B. Unit 2", "C. Unit 3", "D. Unit 4" },
+                { "A. Language skills", "B. Thinking skills", "C. Analytical skills", "D. Creative skills" },
+                { "A. Sports", "B. Adventure", "C. Peaceful co-existence", "D. Environmental Education" },
+                { "A. Adventure", "B. Role Models", "C. Sports", "D. Ethics and Values" },
+                { "A. Phrase", "B. Clause", "C. Sentence", "D. Paragraph" },
+                { "A. Lenore Hetrick", "B. Henry S. Leigh", "C. William Wordsworth", "D. Robert Frost" }
         };
 
-        for (int i = 0; i < questions.length; i++) {
-            JLabel label2 = new JLabel(questions[i]);
-            label2.setBounds(80, 1 + (i * 60 + 100), 950, 30);
-            label2.setForeground(Color.GREEN);
-            label2.setFont(new Font("Arial", Font.BOLD, 16));
-            panel.add(label2);
-        }
+        int correctAnswers[] = {
+                2, // Q1: The Rasoolullah (ﷺ)
+                0, // Q2: Ethics and Values
+                2, // Q3: "Three Days to See"
+                0, // Q4: Participatory Citizenship
+                1, // Q5: Participatory Citizenship
+                0, // Q6: Ethics and Values
+                2, // Q7: Unit 11
+                2, // Q8: Role Models
+                3, // Q9: Unit 8: Settling the Quarrel
+                1, // Q10: Environmental Education
+                0, // Q11: Unit 9
+                0, // Q12: Environmental Education
+                1, // Q13: Unit 9
+                0, // Q14: Participatory Citizenship
+                2, // Q15: Unit 3
+                0, // Q16: Language skills
+                2, // Q17: Peaceful co-existence
+                2, // Q18: Sports
+                2, // Q19: Sentence
+                0 // Q20: Lenore Hetrick
+        };
+
+        // Create radio buttons and store them in a 2D array
+        JRadioButton[][] radioButtons = new JRadioButton[questions.length][4];
 
         for (int i = 0; i < options.length; i++) {
             ButtonGroup group = new ButtonGroup();
@@ -96,10 +119,18 @@ public class MediumQuestion {
                 btn.setForeground(Color.WHITE);
                 btn.setBackground(Color.BLACK);
                 btn.setFont(new Font("Arial", Font.PLAIN, 14));
+                btn.setActionCommand(String.valueOf(j));
                 group.add(btn);
                 panel.add(btn);
+                radioButtons[i][j] = btn;
             }
         }
+
+        JLabel resultLabel = new JLabel();
+        resultLabel.setBounds(80, 1280, 500, 30);
+        resultLabel.setForeground(Color.YELLOW);
+        resultLabel.setFont(new Font("Arial", Font.BOLD, 16));
+        panel.add(resultLabel);
 
         JButton buttonSubmit = new JButton("Submit");
         buttonSubmit.setLayout(null);
@@ -108,8 +139,51 @@ public class MediumQuestion {
         buttonSubmit.setForeground(Color.BLACK);
         buttonSubmit.setFont(new Font("Arial", Font.BOLD, 15));
         buttonSubmit.addActionListener(e -> {
-            JOptionPane.showConfirmDialog(null, "You want to submit");
-            JOptionPane.showMessageDialog(null, "Submitted Successfully");
+            int score = 0;
+            int totalQuestions = questions.length;
+
+            // Check each question
+            for (int i = 0; i < totalQuestions; i++) {
+                for (int j = 0; j < 4; j++) {
+                    if (radioButtons[i][j].isSelected() && j == correctAnswers[i]) {
+                        score++;
+                        break;
+                    }
+                }
+            }
+
+            int confirm = JOptionPane.showConfirmDialog(null,
+                    "Are you sure you want to submit?",
+                    "Confirm Submission",
+                    JOptionPane.YES_NO_OPTION);
+
+            if (confirm == JOptionPane.YES_OPTION) {
+                double percentage = (double) score / totalQuestions * 100;
+                String grade;
+                if (percentage >= 80) {
+                    grade = "Excellent!";
+                } else if (percentage >= 60) {
+                    grade = "Good!";
+                } else if (percentage >= 40) {
+                    grade = "Fair";
+                } else {
+                    grade = "Needs Improvement";
+                }
+
+                String message = String.format(
+                        "<html><body style='text-align: center;'>" +
+                                "<h2>Quiz Results</h2>" +
+                                "<p>Total Questions: %d</p>" +
+                                "<p>Correct Answers: %d</p>" +
+                                "<p>Wrong Answers: %d</p>" +
+                                "<p>Percentage: %.1f%%</p>" +
+                                "<p>Grade: %s</p>" +
+                                "</body></html>",
+                        totalQuestions, score, totalQuestions - score, percentage, grade);
+
+                JOptionPane.showMessageDialog(null, message, "Quiz Results", JOptionPane.INFORMATION_MESSAGE);
+                resultLabel.setText(String.format("Score: %d/%d (%.1f%%)", score, totalQuestions, percentage));
+            }
         });
         panel.add(buttonSubmit);
 
