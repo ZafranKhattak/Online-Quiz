@@ -1,6 +1,6 @@
 package Class.Class10.Maths.Easy;
 
-import Class.Class9.Physics.PhysicsDashboard.PhysicsDashboard;
+import Class.Class10.Maths.MathsDashboard.MathsDashboard;
 import javax.swing.*;
 import java.awt.*;
 
@@ -35,59 +35,77 @@ public class EasyQuestion {
         frame.add(scroll);
 
         String questions[] = {
-                "Question 1: The branch of science that deals with the study of matter, energy, and their interaction is called:",
-                "Question 2: A push or pull acting on a body is called:",
-                "Question 3: The SI unit of force is the:",
-                "Question 4: The force that opposes motion between two surfaces in contact is called:",
-                "Question 5: The instrument used to measure temperature is called a:",
-                "Question 6: The SI unit of length is the:",
-                "Question 7: The SI unit of time is the:",
-                "Question 8: The SI unit of mass is the:",
-                "Question 9: A body at rest does not change its position with respect to its surroundings. This is called:",
-                "Question 10: Study of motion of bodies is known as:",
-                "Question 11: The distance covered in unit time is called:",
-                "Question 12: Work is done when a force acting on a body displaces it in the direction of:",
-                "Question 13: The energy possessed by a body due to its motion is called:",
-                "Question 14: The energy possessed by a body due to its height is called:",
-                "Question 15: The unit of work is the:",
-                "Question 16: The spinning motion of a body about its axis is known as:",
-                "Question 17: The motion of a pendulum is an example of:",
-                "Question 18: A quantity that is completely described by its magnitude only is called:",
-                "Question 19: The rate of change of velocity is called:",
-                "Question 20: The force that pulls objects towards the centre of the Earth is called:"
+                "Question 1: The set of natural numbers is denoted by:",
+                "Question 2: The set of integers is denoted by:",
+                "Question 3: The union of two sets A and B is denoted by:",
+                "Question 4: The intersection of two sets A and B is denoted by:",
+                "Question 5: The empty set is denoted by:",
+                "Question 6: The quadratic equation ax² + bx + c = 0 has how many roots?",
+                "Question 7: The discriminant of the quadratic equation ax² + bx + c = 0 is:",
+                "Question 8: If the discriminant is zero, the roots are:",
+                "Question 9: The sum of roots of ax² + bx + c = 0 is:",
+                "Question 10: The product of roots of ax² + bx + c = 0 is:",
+                "Question 11: The value of sin 0° is:",
+                "Question 12: The value of cos 0° is:",
+                "Question 13: The value of tan 45° is:",
+                "Question 14: The value of sin 90° is:",
+                "Question 15: The distance formula between two points (x₁, y₁) and (x₂, y₂) is:",
+                "Question 16: The midpoint formula between two points (x₁, y₁) and (x₂, y₂) is:",
+                "Question 17: The slope of a horizontal line is:",
+                "Question 18: The slope of a vertical line is:",
+                "Question 19: The equation of a line with slope m and y-intercept c is:",
+                "Question 20: The area of a circle with radius r is:"
         };
 
         String options[][] = {
-                {"A. Chemistry", "B. Biology", "C. Physics", "D. Geology"},
-                {"A. Pressure", "B. Force", "C. Friction", "D. Motion"},
-                {"A. Joule", "B. Watt", "C. Newton", "D. Pascal"},
-                {"A. Gravitational force", "B. Magnetic force", "C. Friction", "D. Muscular force"},
-                {"A. Barometer", "B. Thermometer", "C. Speedometer", "D. Ammeter"},
-                {"A. Foot", "B. Metre", "C. Kilogram", "D. Second"},
-                {"A. Hour", "B. Minute", "C. Second", "D. Day"},
-                {"A. Gram", "B. Kilogram", "C. Pound", "D. Ton"},
-                {"A. Motion", "B. Rest", "C. Velocity", "D. Acceleration"},
-                {"A. Heat", "B. Light", "C. Mechanics", "D. Atomic physics"},
-                {"A. Velocity", "B. Acceleration", "C. Speed", "D. Displacement"},
-                {"A. Force", "B. Displacement", "C. Friction", "D. Motion"},
-                {"A. Potential energy", "B. Kinetic energy", "C. Chemical energy", "D. Heat energy"},
-                {"A. Kinetic energy", "B. Potential energy", "C. Chemical energy", "D. Sound energy"},
-                {"A. Watt", "B. Newton", "C. Joule", "D. Pascal"},
-                {"A. Translatory motion", "B. Vibratory motion", "C. Rotatory motion", "D. Linear motion"},
-                {"A. Translatory motion", "B. Rotatory motion", "C. Vibratory motion", "D. Circular motion"},
-                {"A. Vector quantity", "B. Scalar quantity", "C. Derived quantity", "D. Base quantity"},
-                {"A. Speed", "B. Displacement", "C. Acceleration", "D. Force"},
-                {"A. Magnetic force", "B. Electrostatic force", "C. Gravitational force", "D. Frictional force"}
+                {"A. Z", "B. N", "C. W", "D. Q"},
+                {"A. N", "B. W", "C. Z", "D. Q"},
+                {"A. A ∩ B", "B. A ∪ B", "C. A - B", "D. A'"},
+                {"A. A ∪ B", "B. A - B", "C. A ∩ B", "D. A'"},
+                {"A. {0}", "B. { }", "C. φ", "D. Both B and C"},
+                {"A. 1", "B. 2", "C. 3", "D. 4"},
+                {"A. b² + 4ac", "B. b² - 4ac", "C. a² - 4bc", "D. c² - 4ab"},
+                {"A. Real and equal", "B. Real and distinct", "C. Imaginary", "D. Complex"},
+                {"A. -b/a", "B. b/a", "C. -c/a", "D. c/a"},
+                {"A. -b/a", "B. b/a", "C. -c/a", "D. c/a"},
+                {"A. 0", "B. 1", "C. -1", "D. Undefined"},
+                {"A. 0", "B. 1", "C. -1", "D. Undefined"},
+                {"A. 0", "B. 1/2", "C. 1", "D. √3"},
+                {"A. 0", "B. 1", "C. -1", "D. Undefined"},
+                {"A. √[(x₂ - x₁)² + (y₂ - y₁)²]", "B. (x₂ - x₁)² + (y₂ - y₁)²", "C. √[(x₂ - x₁)³ + (y₂ - y₁)³]", "D. (x₂ - x₁) + (y₂ - y₁)"},
+                {"A. ((x₁+x₂)/2, (y₁+y₂)/2)", "B. ((x₁-x₂)/2, (y₁-y₂)/2)", "C. (x₁+x₂, y₁+y₂)", "D. (x₁x₂, y₁y₂)"},
+                {"A. 0", "B. 1", "C. -1", "D. Undefined"},
+                {"A. 0", "B. 1", "C. -1", "D. Undefined"},
+                {"A. y = mx + c", "B. y = mx", "C. x = my + c", "D. y = mx - c"},
+                {"A. πr", "B. 2πr", "C. πr²", "D. 2πr²"}
         };
 
-        for (int i = 0; i < questions.length; i++) {
-            JLabel label2 = new JLabel(questions[i]);
-            label2.setBounds(80, 1 + (i * 60 + 100), 950, 30);
-            label2.setForeground(Color.GREEN);
-            label2.setFont(new Font("Arial", Font.BOLD, 16));
-            panel.add(label2);
-        }
+        int correctAnswers[] = {
+                1,  // Q1: N
+                2,  // Q2: Z
+                1,  // Q3: A ∪ B
+                2,  // Q4: A ∩ B
+                3,  // Q5: Both B and C
+                1,  // Q6: 2
+                1,  // Q7: b² - 4ac
+                0,  // Q8: Real and equal
+                0,  // Q9: -b/a
+                3,  // Q10: c/a
+                0,  // Q11: 0
+                1,  // Q12: 1
+                2,  // Q13: 1
+                1,  // Q14: 1
+                0,  // Q15: √[(x₂ - x₁)² + (y₂ - y₁)²]
+                0,  // Q16: ((x₁+x₂)/2, (y₁+y₂)/2)
+                0,  // Q17: 0
+                3,  // Q18: Undefined
+                0,  // Q19: y = mx + c
+                2   // Q20: πr²
+        };
 
+        // Create radio buttons and store them in a 2D array
+        JRadioButton[][] radioButtons = new JRadioButton[questions.length][4];
+        
         for (int i = 0; i < options.length; i++) {
             ButtonGroup group = new ButtonGroup();
             for (int j = 0; j < 4; j++) {
@@ -96,10 +114,18 @@ public class EasyQuestion {
                 btn.setForeground(Color.WHITE);
                 btn.setBackground(Color.BLACK);
                 btn.setFont(new Font("Arial", Font.PLAIN, 14));
+                btn.setActionCommand(String.valueOf(j));
                 group.add(btn);
                 panel.add(btn);
+                radioButtons[i][j] = btn;
             }
         }
+
+        JLabel resultLabel = new JLabel();
+        resultLabel.setBounds(80, 1280, 500, 30);
+        resultLabel.setForeground(Color.YELLOW);
+        resultLabel.setFont(new Font("Arial", Font.BOLD, 16));
+        panel.add(resultLabel);
 
         JButton buttonSubmit = new JButton("Submit");
         buttonSubmit.setLayout(null);
@@ -108,8 +134,52 @@ public class EasyQuestion {
         buttonSubmit.setForeground(Color.BLACK);
         buttonSubmit.setFont(new Font("Arial", Font.BOLD, 15));
         buttonSubmit.addActionListener(e -> {
-            JOptionPane.showConfirmDialog(null, "You want to submit");
-            JOptionPane.showMessageDialog(null, "Submitted Successfully");
+            int score = 0;
+            int totalQuestions = questions.length;
+            
+            // Check each question
+            for (int i = 0; i < totalQuestions; i++) {
+                for (int j = 0; j < 4; j++) {
+                    if (radioButtons[i][j].isSelected() && j == correctAnswers[i]) {
+                        score++;
+                        break;
+                    }
+                }
+            }
+            
+            int confirm = JOptionPane.showConfirmDialog(null, 
+                "Are you sure you want to submit?", 
+                "Confirm Submission", 
+                JOptionPane.YES_NO_OPTION);
+                
+            if (confirm == JOptionPane.YES_OPTION) {
+                double percentage = (double) score / totalQuestions * 100;
+                String grade;
+                if (percentage >= 80) {
+                    grade = "Excellent!";
+                } else if (percentage >= 60) {
+                    grade = "Good!";
+                } else if (percentage >= 40) {
+                    grade = "Fair";
+                } else {
+                    grade = "Needs Improvement";
+                }
+                
+                String message = String.format(
+                    "<html><body style='text-align: center;'>" +
+                    "<h2>Quiz Results</h2>" +
+                    "<p>Total Questions: %d</p>" +
+                    "<p>Correct Answers: %d</p>" +
+                    "<p>Wrong Answers: %d</p>" +
+                    "<p>Percentage: %.1f%%</p>" +
+                    "<p>Grade: %s</p>" +
+                    "</body></html>",
+                    totalQuestions, score, totalQuestions - score, percentage, grade
+                );
+                
+                JOptionPane.showMessageDialog(null, message, "Quiz Results", JOptionPane.INFORMATION_MESSAGE);
+                resultLabel.setText(String.format("Score: %d/%d (%.1f%%)", score, totalQuestions, percentage));
+            }
         });
         panel.add(buttonSubmit);
 
@@ -120,7 +190,7 @@ public class EasyQuestion {
         buttonBack.setForeground(Color.BLACK);
         buttonBack.setFont(new Font("Arial", Font.BOLD, 15));
         buttonBack.addActionListener(e -> {
-            new PhysicsDashboard();
+            new MathsDashboard();
             frame.dispose();
         });
         panel.add(buttonBack);

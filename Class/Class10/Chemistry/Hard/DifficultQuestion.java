@@ -58,35 +58,61 @@ public class DifficultQuestion {
         };
 
         String options[][] = {
-                {"A. The sum of the molar concentrations of the reactants", "B. The product of the molar concentrations of the reactants", "C. The difference of the molar concentrations of the reactants", "D. The ratio of the molar concentrations of the reactants"},
-                {"A. Products are favored at equilibrium", "B. Reactants are favored at equilibrium", "C. The reaction is fast", "D. The reaction is slow"},
-                {"A. NH₃", "B. H₂O", "C. BF₃", "D. OH⁻"},
-                {"A. Small amounts of acid or base", "B. Large amounts of acid or base", "C. Only acid", "D. Only base"},
-                {"A. 1", "B. 2", "C. 3", "D. 4"},
-                {"A. Diamond", "B. Graphite", "C. Fullerene", "D. Buckminsterfullerene"},
-                {"A. -OH", "B. -CHO", "C. -COOH", "D. -CO-"},
-                {"A. -OH", "B. -CHO", "C. -COOH", "D. -CO-"},
-                {"A. 1", "B. 2", "C. 3", "D. 4"},
-                {"A. Hydrogenation", "B. Halogenation", "C. Oxidation", "D. Reduction"},
-                {"A. Sucrose", "B. Maltose", "C. Glucose", "D. Lactose"},
-                {"A. Glucose", "B. Fructose", "C. Sucrose", "D. Maltose"},
-                {"A. Adenine", "B. Guanine", "C. Cytosine", "D. Uracil"},
-                {"A. 21%", "B. 78%", "C. 0.93%", "D. 0.03%"},
-                {"A. O₂", "B. O₃", "C. O₄", "D. O"},
-                {"A. Carbon dioxide", "B. Methane", "C. Chlorofluorocarbons (CFCs)", "D. Nitrogen oxides"},
-                {"A. CaO", "B. Ca(OH)₂", "C. CaCO₃", "D. CaSO₄"},
-                {"A. Na₂CO₃", "B. NaHCO₃", "C. NaOH", "D. NaCl"},
-                {"A. Calcium carbonate and clay", "B. Sodium carbonate and sand", "C. Calcium oxide and water", "D. Potassium carbonate and clay"},
-                {"A. Oxygen", "B. Nitrogen", "C. Carbon dioxide", "D. Hydrogen"}
+                { "A. The sum of the molar concentrations of the reactants",
+                        "B. The product of the molar concentrations of the reactants",
+                        "C. The difference of the molar concentrations of the reactants",
+                        "D. The ratio of the molar concentrations of the reactants" },
+                { "A. Products are favored at equilibrium", "B. Reactants are favored at equilibrium",
+                        "C. The reaction is fast", "D. The reaction is slow" },
+                { "A. NH₃", "B. H₂O", "C. BF₃", "D. OH⁻" },
+                { "A. Small amounts of acid or base", "B. Large amounts of acid or base", "C. Only acid",
+                        "D. Only base" },
+                { "A. 1", "B. 2", "C. 3", "D. 4" },
+                { "A. Diamond", "B. Graphite", "C. Fullerene", "D. Buckminsterfullerene" },
+                { "A. -OH", "B. -CHO", "C. -COOH", "D. -CO-" },
+                { "A. -OH", "B. -CHO", "C. -COOH", "D. -CO-" },
+                { "A. 1", "B. 2", "C. 3", "D. 4" },
+                { "A. Hydrogenation", "B. Halogenation", "C. Oxidation", "D. Reduction" },
+                { "A. Sucrose", "B. Maltose", "C. Glucose", "D. Lactose" },
+                { "A. Glucose", "B. Fructose", "C. Sucrose", "D. Maltose" },
+                { "A. Adenine", "B. Guanine", "C. Cytosine", "D. Uracil" },
+                { "A. 21%", "B. 78%", "C. 0.93%", "D. 0.03%" },
+                { "A. O₂", "B. O₃", "C. O₄", "D. O" },
+                { "A. Carbon dioxide", "B. Methane", "C. Chlorofluorocarbons (CFCs)", "D. Nitrogen oxides" },
+                { "A. CaO", "B. Ca(OH)₂", "C. CaCO₃", "D. CaSO₄" },
+                { "A. Na₂CO₃", "B. NaHCO₃", "C. NaOH", "D. NaCl" },
+                { "A. Calcium carbonate and clay", "B. Sodium carbonate and sand", "C. Calcium oxide and water",
+                        "D. Potassium carbonate and clay" },
+                { "A. Oxygen", "B. Nitrogen", "C. Carbon dioxide", "D. Hydrogen" }
         };
 
-        for (int i = 0; i < questions.length; i++) {
-            JLabel label2 = new JLabel(questions[i]);
-            label2.setBounds(80, 1 + (i * 60 + 100), 950, 30);
-            label2.setForeground(Color.GREEN);
-            label2.setFont(new Font("Arial", Font.BOLD, 16));
-            panel.add(label2);
-        }
+        int correctAnswers[] = {
+                1, // Q1: The product of the molar concentrations of the reactants
+                1, // Q2: Reactants are favored at equilibrium
+                2, // Q3: BF₃
+                0, // Q4: Small amounts of acid or base
+                2, // Q5: 3
+                3, // Q6: Buckminsterfullerene (Note: This is actually an allotrope, but all others
+                   // are also allotropes. However, Buckminsterfullerene is often just called
+                   // fullerene. The answer might vary. We'll use index 3)
+                1, // Q7: -CHO
+                3, // Q8: -CO-
+                1, // Q9: 2
+                1, // Q10: Halogenation
+                2, // Q11: Glucose (it's a monosaccharide)
+                2, // Q12: Sucrose
+                3, // Q13: Uracil
+                1, // Q14: 78%
+                1, // Q15: O₃
+                2, // Q16: Chlorofluorocarbons (CFCs)
+                1, // Q17: Ca(OH)₂
+                1, // Q18: NaHCO₃
+                0, // Q19: Calcium carbonate and clay
+                2 // Q20: Carbon dioxide
+        };
+
+        // Create radio buttons and store them in a 2D array
+        JRadioButton[][] radioButtons = new JRadioButton[questions.length][4];
 
         for (int i = 0; i < options.length; i++) {
             ButtonGroup group = new ButtonGroup();
@@ -96,10 +122,18 @@ public class DifficultQuestion {
                 btn.setForeground(Color.WHITE);
                 btn.setBackground(Color.BLACK);
                 btn.setFont(new Font("Arial", Font.PLAIN, 14));
+                btn.setActionCommand(String.valueOf(j));
                 group.add(btn);
                 panel.add(btn);
+                radioButtons[i][j] = btn;
             }
         }
+
+        JLabel resultLabel = new JLabel();
+        resultLabel.setBounds(80, 1280, 500, 30);
+        resultLabel.setForeground(Color.YELLOW);
+        resultLabel.setFont(new Font("Arial", Font.BOLD, 16));
+        panel.add(resultLabel);
 
         JButton buttonSubmit = new JButton("Submit");
         buttonSubmit.setLayout(null);
@@ -108,8 +142,51 @@ public class DifficultQuestion {
         buttonSubmit.setForeground(Color.BLACK);
         buttonSubmit.setFont(new Font("Arial", Font.BOLD, 15));
         buttonSubmit.addActionListener(e -> {
-            JOptionPane.showConfirmDialog(null, "You want to submit");
-            JOptionPane.showMessageDialog(null, "Submitted Successfully");
+            int score = 0;
+            int totalQuestions = questions.length;
+
+            // Check each question
+            for (int i = 0; i < totalQuestions; i++) {
+                for (int j = 0; j < 4; j++) {
+                    if (radioButtons[i][j].isSelected() && j == correctAnswers[i]) {
+                        score++;
+                        break;
+                    }
+                }
+            }
+
+            int confirm = JOptionPane.showConfirmDialog(null,
+                    "Are you sure you want to submit?",
+                    "Confirm Submission",
+                    JOptionPane.YES_NO_OPTION);
+
+            if (confirm == JOptionPane.YES_OPTION) {
+                double percentage = (double) score / totalQuestions * 100;
+                String grade;
+                if (percentage >= 80) {
+                    grade = "Excellent!";
+                } else if (percentage >= 60) {
+                    grade = "Good!";
+                } else if (percentage >= 40) {
+                    grade = "Fair";
+                } else {
+                    grade = "Needs Improvement";
+                }
+
+                String message = String.format(
+                        "<html><body style='text-align: center;'>" +
+                                "<h2>Quiz Results</h2>" +
+                                "<p>Total Questions: %d</p>" +
+                                "<p>Correct Answers: %d</p>" +
+                                "<p>Wrong Answers: %d</p>" +
+                                "<p>Percentage: %.1f%%</p>" +
+                                "<p>Grade: %s</p>" +
+                                "</body></html>",
+                        totalQuestions, score, totalQuestions - score, percentage, grade);
+
+                JOptionPane.showMessageDialog(null, message, "Quiz Results", JOptionPane.INFORMATION_MESSAGE);
+                resultLabel.setText(String.format("Score: %d/%d (%.1f%%)", score, totalQuestions, percentage));
+            }
         });
         panel.add(buttonSubmit);
 

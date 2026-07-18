@@ -58,35 +58,55 @@ public class EasyQuestion {
         };
 
         String options[][] = {
-                {"A. Inorganic chemistry", "B. Organic chemistry", "C. Physical chemistry", "D. Analytical chemistry"},
-                {"A. Base", "B. Salt", "C. Acid", "D. Alkali"},
-                {"A. 0", "B. 7", "C. 14", "D. 10"},
-                {"A. Neutralization reaction", "B. Decomposition reaction", "C. Combustion reaction", "D. Displacement reaction"},
-                {"A. Carbohydrates", "B. Hydrocarbons", "C. Proteins", "D. Lipids"},
-                {"A. CₙH₂ₙ", "B. CₙH₂ₙ₊₂", "C. CₙH₂ₙ₋₂", "D. CₙH₂ₙ₊₆"},
-                {"A. Ethane", "B. Propane", "C. Methane", "D. Butane"},
-                {"A. Fatty acids", "B. Amino acids", "C. Monosaccharides", "D. Nucleotides"},
-                {"A. Proteins", "B. Fats", "C. Carbohydrates", "D. Vitamins"},
-                {"A. Sublimation", "B. Evaporation", "C. Condensation", "D. Melting"},
-                {"A. Acidic", "B. Basic", "C. Neutral", "D. Salt"},
-                {"A. Acidic", "B. Basic", "C. Neutral", "D. Salt"},
-                {"A. H₂O", "B. H₂O₂", "C. H₃O", "D. OH"},
-                {"A. Only oxygen", "B. Only water", "C. Both oxygen and water", "D. Neither oxygen nor water"},
-                {"A. Plastic", "B. Nylon", "C. Cotton", "D. Polythene"},
-                {"A. Evaporation", "B. Boiling", "C. Condensation", "D. Freezing"},
-                {"A. Alloy", "B. Compound", "C. Solution", "D. Suspension"},
-                {"A. Reactant", "B. Product", "C. Catalyst", "D. Inhibitor"},
-                {"A. 5", "B. 6", "C. 7", "D. 8"},
-                {"A. Iron", "B. Copper", "C. Sulphur", "D. Sodium"}
+                { "A. Inorganic chemistry", "B. Organic chemistry", "C. Physical chemistry",
+                        "D. Analytical chemistry" },
+                { "A. Base", "B. Salt", "C. Acid", "D. Alkali" },
+                { "A. 0", "B. 7", "C. 14", "D. 10" },
+                { "A. Neutralization reaction", "B. Decomposition reaction", "C. Combustion reaction",
+                        "D. Displacement reaction" },
+                { "A. Carbohydrates", "B. Hydrocarbons", "C. Proteins", "D. Lipids" },
+                { "A. CₙH₂ₙ", "B. CₙH₂ₙ₊₂", "C. CₙH₂ₙ₋₂", "D. CₙH₂ₙ₊₆" },
+                { "A. Ethane", "B. Propane", "C. Methane", "D. Butane" },
+                { "A. Fatty acids", "B. Amino acids", "C. Monosaccharides", "D. Nucleotides" },
+                { "A. Proteins", "B. Fats", "C. Carbohydrates", "D. Vitamins" },
+                { "A. Sublimation", "B. Evaporation", "C. Condensation", "D. Melting" },
+                { "A. Acidic", "B. Basic", "C. Neutral", "D. Salt" },
+                { "A. Acidic", "B. Basic", "C. Neutral", "D. Salt" },
+                { "A. H₂O", "B. H₂O₂", "C. H₃O", "D. OH" },
+                { "A. Only oxygen", "B. Only water", "C. Both oxygen and water", "D. Neither oxygen nor water" },
+                { "A. Plastic", "B. Nylon", "C. Cotton", "D. Polythene" },
+                { "A. Evaporation", "B. Boiling", "C. Condensation", "D. Freezing" },
+                { "A. Alloy", "B. Compound", "C. Solution", "D. Suspension" },
+                { "A. Reactant", "B. Product", "C. Catalyst", "D. Inhibitor" },
+                { "A. 5", "B. 6", "C. 7", "D. 8" },
+                { "A. Iron", "B. Copper", "C. Sulphur", "D. Sodium" }
         };
 
-        for (int i = 0; i < questions.length; i++) {
-            JLabel label2 = new JLabel(questions[i]);
-            label2.setBounds(80, 1 + (i * 60 + 100), 950, 30);
-            label2.setForeground(Color.GREEN);
-            label2.setFont(new Font("Arial", Font.BOLD, 16));
-            panel.add(label2);
-        }
+        int correctAnswers[] = {
+                1, // Q1: Organic chemistry
+                2, // Q2: Acid
+                1, // Q3: 7
+                0, // Q4: Neutralization reaction
+                1, // Q5: Hydrocarbons
+                1, // Q6: CₙH₂ₙ₊₂
+                2, // Q7: Methane
+                1, // Q8: Amino acids
+                2, // Q9: Carbohydrates
+                0, // Q10: Sublimation
+                0, // Q11: Acidic
+                1, // Q12: Basic
+                0, // Q13: H₂O
+                2, // Q14: Both oxygen and water
+                2, // Q15: Cotton
+                1, // Q16: Boiling
+                0, // Q17: Alloy
+                2, // Q18: Catalyst
+                2, // Q19: 7
+                2 // Q20: Sulphur
+        };
+
+        // Create radio buttons and store them in a 2D array
+        JRadioButton[][] radioButtons = new JRadioButton[questions.length][4];
 
         for (int i = 0; i < options.length; i++) {
             ButtonGroup group = new ButtonGroup();
@@ -96,10 +116,18 @@ public class EasyQuestion {
                 btn.setForeground(Color.WHITE);
                 btn.setBackground(Color.BLACK);
                 btn.setFont(new Font("Arial", Font.PLAIN, 14));
+                btn.setActionCommand(String.valueOf(j));
                 group.add(btn);
                 panel.add(btn);
+                radioButtons[i][j] = btn;
             }
         }
+
+        JLabel resultLabel = new JLabel();
+        resultLabel.setBounds(80, 1280, 500, 30);
+        resultLabel.setForeground(Color.YELLOW);
+        resultLabel.setFont(new Font("Arial", Font.BOLD, 16));
+        panel.add(resultLabel);
 
         JButton buttonSubmit = new JButton("Submit");
         buttonSubmit.setLayout(null);
@@ -108,8 +136,51 @@ public class EasyQuestion {
         buttonSubmit.setForeground(Color.BLACK);
         buttonSubmit.setFont(new Font("Arial", Font.BOLD, 15));
         buttonSubmit.addActionListener(e -> {
-            JOptionPane.showConfirmDialog(null, "You want to submit");
-            JOptionPane.showMessageDialog(null, "Submitted Successfully");
+            int score = 0;
+            int totalQuestions = questions.length;
+
+            // Check each question
+            for (int i = 0; i < totalQuestions; i++) {
+                for (int j = 0; j < 4; j++) {
+                    if (radioButtons[i][j].isSelected() && j == correctAnswers[i]) {
+                        score++;
+                        break;
+                    }
+                }
+            }
+
+            int confirm = JOptionPane.showConfirmDialog(null,
+                    "Are you sure you want to submit?",
+                    "Confirm Submission",
+                    JOptionPane.YES_NO_OPTION);
+
+            if (confirm == JOptionPane.YES_OPTION) {
+                double percentage = (double) score / totalQuestions * 100;
+                String grade;
+                if (percentage >= 80) {
+                    grade = "Excellent!";
+                } else if (percentage >= 60) {
+                    grade = "Good!";
+                } else if (percentage >= 40) {
+                    grade = "Fair";
+                } else {
+                    grade = "Needs Improvement";
+                }
+
+                String message = String.format(
+                        "<html><body style='text-align: center;'>" +
+                                "<h2>Quiz Results</h2>" +
+                                "<p>Total Questions: %d</p>" +
+                                "<p>Correct Answers: %d</p>" +
+                                "<p>Wrong Answers: %d</p>" +
+                                "<p>Percentage: %.1f%%</p>" +
+                                "<p>Grade: %s</p>" +
+                                "</body></html>",
+                        totalQuestions, score, totalQuestions - score, percentage, grade);
+
+                JOptionPane.showMessageDialog(null, message, "Quiz Results", JOptionPane.INFORMATION_MESSAGE);
+                resultLabel.setText(String.format("Score: %d/%d (%.1f%%)", score, totalQuestions, percentage));
+            }
         });
         panel.add(buttonSubmit);
 

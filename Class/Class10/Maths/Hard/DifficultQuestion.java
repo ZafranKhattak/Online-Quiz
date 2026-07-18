@@ -1,6 +1,6 @@
 package Class.Class10.Maths.Hard;
 
-import Class.Class9.Physics.PhysicsDashboard.PhysicsDashboard;
+import Class.Class10.Maths.MathsDashboard.MathsDashboard;
 import javax.swing.*;
 import java.awt.*;
 
@@ -35,59 +35,77 @@ public class DifficultQuestion {
         frame.add(scroll);
 
         String questions[] = {
-                "Question 1: Which of the following is a derived physical quantity?",
-                "Question 2: The least count of a vernier callipers is:",
-                "Question 3: Significant figures in a measurement indicate:",
-                "Question 4: The slope of a speed-time graph gives:",
-                "Question 5: If two bodies of masses m₁ and m₂ are hanging from the two ends of a string passing over a pulley, the acceleration of the system is:",
-                "Question 6: The law of conservation of momentum states that:",
-                "Question 7: The torque produced by a force depends on:",
-                "Question 8: A body is said to be in stable equilibrium if:",
-                "Question 9: The centre of gravity of a body is:",
-                "Question 10: The gravitational field strength on the surface of the Earth is:",
-                "Question 11: Escape velocity from the Earth's surface is approximately:",
-                "Question 12: The efficiency of a machine is defined as:",
-                "Question 13: The pressure exerted by a liquid column depends on:",
-                "Question 14: A couple is formed by:",
-                "Question 15: The first condition for equilibrium is:",
-                "Question 16: The second condition for equilibrium is:",
-                "Question 17: The mass of the Earth can be calculated using:",
-                "Question 18: A geostationary satellite has a time period of:",
-                "Question 19: The energy conversion in a hydroelectric power station is:",
-                "Question 20: According to Newton's third law of motion, action and reaction:"
+                "Question 1: The number of elements in the power set of A = {a, b, c} is:",
+                "Question 2: If A = {1, 2, 3, 4} and B = {3, 4, 5, 6}, then A Δ B is:",
+                "Question 3: The solution set of x² - 5x + 6 = 0 is:",
+                "Question 4: If the roots of ax² + bx + c = 0 are real and equal, then:",
+                "Question 5: The discriminant of 2x² - 3x + 1 = 0 is:",
+                "Question 6: The sum of the first n natural numbers is:",
+                "Question 7: The sum of the first n odd natural numbers is:",
+                "Question 8: The nth term of an arithmetic progression with first term a and common difference d is:",
+                "Question 9: If a, b, c are in arithmetic progression, then:",
+                "Question 10: The value of sin²θ + cos²θ is:",
+                "Question 11: The value of 1 + tan²θ is:",
+                "Question 12: The value of sin(90° - θ) is:",
+                "Question 13: The distance of the point (3, 4) from the origin is:",
+                "Question 14: The area of a triangle with vertices (0,0), (4,0), (0,3) is:",
+                "Question 15: The slope of the line 2x + 3y = 6 is:",
+                "Question 16: The equation of a line passing through (1,2) with slope 3 is:",
+                "Question 17: The area of a sector of a circle with radius r and angle θ (in radians) is:",
+                "Question 18: The length of an arc of a circle with radius r and angle θ (in radians) is:",
+                "Question 19: If the mean of 2, 4, 6, 8, x is 6, then x is:",
+                "Question 20: The median of 2, 4, 6, 8, 10, 12 is:"
         };
 
         String options[][] = {
-                {"A. Length", "B. Mass", "C. Volume", "D. Time"},
-                {"A. 0.1 cm", "B. 0.01 cm", "C. 0.001 cm", "D. 0.0001 cm"},
-                {"A. The magnitude of the quantity", "B. The precision of the measurement", "C. The accuracy of the instrument", "D. The size of the quantity"},
-                {"A. Distance travelled", "B. Displacement", "C. Acceleration", "D. Velocity"},
-                {"A. g", "B. (m₁ - m₂)g/(m₁ + m₂)", "C. (m₁ + m₂)g/(m₁ - m₂)", "D. (m₁m₂)g/(m₁ + m₂)"},
-                {"A. Momentum is always lost in collisions", "B. Momentum of an isolated system remains constant", "C. Momentum is always gained in collisions", "D. Momentum is never conserved"},
-                {"A. Force and distance", "B. Force and time", "C. Force and moment arm", "D. Force and velocity"},
-                {"A. After a slight tilt it moves further away", "B. After a slight tilt it returns to its original position", "C. It remains in its new position after a slight tilt", "D. It does not move at all"},
-                {"A. The point where its entire mass is concentrated", "B. The point where its entire weight is concentrated", "C. The centre of the body", "D. The lowest point of the body"},
-                {"A. 9.8 N/kg", "B. 10 N/kg", "C. 8.9 N/kg", "D. 9.0 N/kg"},
-                {"A. 7.9 km/s", "B. 11.2 km/s", "C. 14.5 km/s", "D. 16.0 km/s"},
-                {"A. Work output/Work input", "B. Work input/Work output", "C. Power output/Power input", "D. Force output/Force input"},
-                {"A. Density and height", "B. Density and area", "C. Height and area", "D. Mass and volume"},
-                {"A. Two like parallel forces of equal magnitude", "B. Two unlike parallel forces of equal magnitude", "C. Two forces acting along the same line", "D. Two forces acting perpendicular to each other"},
-                {"A. Net force = 0", "B. Net torque = 0", "C. Sum of all forces = 0", "D. Sum of all torques = 0"},
-                {"A. Net force = 0", "B. Net torque = 0", "C. Sum of all forces = 0", "D. Sum of all velocities = 0"},
-                {"A. Newton's first law", "B. Newton's second law", "C. Newton's law of gravitation", "D. The law of conservation of momentum"},
-                {"A. 12 hours", "B. 24 hours", "C. 48 hours", "D. 7 days"},
-                {"A. Kinetic → Electrical", "B. Potential → Kinetic → Electrical", "C. Chemical → Electrical", "D. Nuclear → Thermal → Electrical"},
-                {"A. Act on the same body", "B. Act on different bodies", "C. Are always unequal", "D. Are always in the same direction"}
+                {"A. 4", "B. 6", "C. 8", "D. 12"},
+                {"A. {1, 2, 5, 6}", "B. {3, 4}", "C. {1, 2, 3, 4}", "D. {5, 6}"},
+                {"A. {2, 3}", "B. {1, 6}", "C. {2, 4}", "D. {3, 5}"},
+                {"A. b² - 4ac = 0", "B. b² - 4ac > 0", "C. b² - 4ac < 0", "D. b² = 4ac"},
+                {"A. 1", "B. -1", "C. 7", "D. -7"},
+                {"A. n(n+1)/2", "B. n(n-1)/2", "C. n²", "D. n(n+1)"},
+                {"A. n²", "B. n(n+1)/2", "C. n(n-1)/2", "D. 2n"},
+                {"A. a + (n-1)d", "B. a + nd", "C. a - nd", "D. a + (n+1)d"},
+                {"A. b = (a+c)/2", "B. b = a+c", "C. b = (a-c)/2", "D. b = 2ac"},
+                {"A. 0", "B. 1", "C. -1", "D. 2"},
+                {"A. sin²θ", "B. cos²θ", "C. sec²θ", "D. cosec²θ"},
+                {"A. sin θ", "B. cos θ", "C. tan θ", "D. cot θ"},
+                {"A. 3", "B. 4", "C. 5", "D. 7"},
+                {"A. 3", "B. 6", "C. 9", "D. 12"},
+                {"A. -2/3", "B. 2/3", "C. -3/2", "D. 3/2"},
+                {"A. y = 3x - 1", "B. y = 3x + 1", "C. y = 3x - 3", "D. y = 3x + 3"},
+                {"A. ½ r²θ", "B. r²θ", "C. 2r²θ", "D. r²θ/2"},
+                {"A. rθ", "B. r²θ", "C. 2rθ", "D. rθ/2"},
+                {"A. 10", "B. 8", "C. 12", "D. 6"},
+                {"A. 6", "B. 7", "C. 8", "D. 9"}
         };
 
-        for (int i = 0; i < questions.length; i++) {
-            JLabel label2 = new JLabel(questions[i]);
-            label2.setBounds(80, 1 + (i * 60 + 100), 950, 30);
-            label2.setForeground(Color.GREEN);
-            label2.setFont(new Font("Arial", Font.BOLD, 16));
-            panel.add(label2);
-        }
+        int correctAnswers[] = {
+                2,  // Q1: 8 (Power set has 2³ = 8 elements)
+                0,  // Q2: {1, 2, 5, 6} (Symmetric difference)
+                0,  // Q3: {2, 3}
+                0,  // Q4: b² - 4ac = 0
+                0,  // Q5: 1 (D = 9 - 8 = 1)
+                0,  // Q6: n(n+1)/2
+                0,  // Q7: n²
+                0,  // Q8: a + (n-1)d
+                0,  // Q9: b = (a+c)/2
+                1,  // Q10: 1
+                2,  // Q11: sec²θ
+                1,  // Q12: cos θ
+                2,  // Q13: 5 (√(9+16) = 5)
+                1,  // Q14: 6 (Area = ½ × 4 × 3 = 6)
+                0,  // Q15: -2/3 (2x + 3y = 6 → y = -2/3x + 2)
+                0,  // Q16: y = 3x - 1 (y - 2 = 3(x - 1) → y = 3x - 1)
+                0,  // Q17: ½ r²θ
+                0,  // Q18: rθ
+                0,  // Q19: 10 (Sum = 2+4+6+8+x = 20+x, mean = (20+x)/5 = 6 → x = 10)
+                1   // Q20: 7 (Median of even number of terms = average of middle two = (6+8)/2 = 7)
+        };
 
+        // Create radio buttons and store them in a 2D array
+        JRadioButton[][] radioButtons = new JRadioButton[questions.length][4];
+        
         for (int i = 0; i < options.length; i++) {
             ButtonGroup group = new ButtonGroup();
             for (int j = 0; j < 4; j++) {
@@ -96,10 +114,18 @@ public class DifficultQuestion {
                 btn.setForeground(Color.WHITE);
                 btn.setBackground(Color.BLACK);
                 btn.setFont(new Font("Arial", Font.PLAIN, 14));
+                btn.setActionCommand(String.valueOf(j));
                 group.add(btn);
                 panel.add(btn);
+                radioButtons[i][j] = btn;
             }
         }
+
+        JLabel resultLabel = new JLabel();
+        resultLabel.setBounds(80, 1280, 500, 30);
+        resultLabel.setForeground(Color.YELLOW);
+        resultLabel.setFont(new Font("Arial", Font.BOLD, 16));
+        panel.add(resultLabel);
 
         JButton buttonSubmit = new JButton("Submit");
         buttonSubmit.setLayout(null);
@@ -108,8 +134,52 @@ public class DifficultQuestion {
         buttonSubmit.setForeground(Color.BLACK);
         buttonSubmit.setFont(new Font("Arial", Font.BOLD, 15));
         buttonSubmit.addActionListener(e -> {
-            JOptionPane.showConfirmDialog(null, "You want to submit");
-            JOptionPane.showMessageDialog(null, "Submitted Successfully");
+            int score = 0;
+            int totalQuestions = questions.length;
+            
+            // Check each question
+            for (int i = 0; i < totalQuestions; i++) {
+                for (int j = 0; j < 4; j++) {
+                    if (radioButtons[i][j].isSelected() && j == correctAnswers[i]) {
+                        score++;
+                        break;
+                    }
+                }
+            }
+            
+            int confirm = JOptionPane.showConfirmDialog(null, 
+                "Are you sure you want to submit?", 
+                "Confirm Submission", 
+                JOptionPane.YES_NO_OPTION);
+                
+            if (confirm == JOptionPane.YES_OPTION) {
+                double percentage = (double) score / totalQuestions * 100;
+                String grade;
+                if (percentage >= 80) {
+                    grade = "Excellent!";
+                } else if (percentage >= 60) {
+                    grade = "Good!";
+                } else if (percentage >= 40) {
+                    grade = "Fair";
+                } else {
+                    grade = "Needs Improvement";
+                }
+                
+                String message = String.format(
+                    "<html><body style='text-align: center;'>" +
+                    "<h2>Quiz Results</h2>" +
+                    "<p>Total Questions: %d</p>" +
+                    "<p>Correct Answers: %d</p>" +
+                    "<p>Wrong Answers: %d</p>" +
+                    "<p>Percentage: %.1f%%</p>" +
+                    "<p>Grade: %s</p>" +
+                    "</body></html>",
+                    totalQuestions, score, totalQuestions - score, percentage, grade
+                );
+                
+                JOptionPane.showMessageDialog(null, message, "Quiz Results", JOptionPane.INFORMATION_MESSAGE);
+                resultLabel.setText(String.format("Score: %d/%d (%.1f%%)", score, totalQuestions, percentage));
+            }
         });
         panel.add(buttonSubmit);
 
@@ -120,7 +190,7 @@ public class DifficultQuestion {
         buttonBack.setForeground(Color.BLACK);
         buttonBack.setFont(new Font("Arial", Font.BOLD, 15));
         buttonBack.addActionListener(e -> {
-            new PhysicsDashboard();
+            new MathsDashboard();
             frame.dispose();
         });
         panel.add(buttonBack);
