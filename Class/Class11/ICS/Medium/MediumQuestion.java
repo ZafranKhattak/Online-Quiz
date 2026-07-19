@@ -80,14 +80,32 @@ public class MediumQuestion {
                 {"A. .py", "B. .pyc", "C. .pyth", "D. .pyw"}
         };
 
-        for (int i = 0; i < questions.length; i++) {
-            JLabel label2 = new JLabel(questions[i]);
-            label2.setBounds(80, 1 + (i * 60 + 100), 950, 30);
-            label2.setForeground(Color.GREEN);
-            label2.setFont(new Font("Arial", Font.BOLD, 16));
-            panel.add(label2);
-        }
+        int correctAnswers[] = {
+                1,  // Q1: 5 (Planning, Analysis, Design, Implementation, Maintenance)
+                2,  // Q2: Development/Implementation
+                2,  // Q3: Ambiguity (Algorithm must be unambiguous)
+                1,  // Q4: Flowchart
+                2,  // Q5: Maintenance
+                2,  // Q6: 10 (1×8 + 0×4 + 1×2 + 0×1 = 10)
+                2,  // Q7: 1111 (8+4+2+1=15)
+                2,  // Q8: 10 (A = 10 in hexadecimal)
+                1,  // Q9: NoneType
+                1,  // Q10: Memory location equality
+                2,  // Q11: Null (Null is not a Python keyword)
+                1,  // Q12: 0 to n-1
+                2,  // Q13: break
+                1,  // Q14: continue
+                1,  // Q15: Immutability
+                1,  // Q16: len()
+                0,  // Q17: Present in a sequence
+                0,  // Q18: Key-value pairs
+                2,  // Q19: update()
+                2   // Q20: .pyth (Python files use .py, .pyc, .pyw)
+        };
 
+        // Create radio buttons and store them in a 2D array
+        JRadioButton[][] radioButtons = new JRadioButton[questions.length][4];
+        
         for (int i = 0; i < options.length; i++) {
             ButtonGroup group = new ButtonGroup();
             for (int j = 0; j < 4; j++) {
@@ -96,10 +114,18 @@ public class MediumQuestion {
                 btn.setForeground(Color.WHITE);
                 btn.setBackground(Color.BLACK);
                 btn.setFont(new Font("Arial", Font.PLAIN, 14));
+                btn.setActionCommand(String.valueOf(j));
                 group.add(btn);
                 panel.add(btn);
+                radioButtons[i][j] = btn;
             }
         }
+
+        JLabel resultLabel = new JLabel();
+        resultLabel.setBounds(80, 1280, 500, 30);
+        resultLabel.setForeground(Color.YELLOW);
+        resultLabel.setFont(new Font("Arial", Font.BOLD, 16));
+        panel.add(resultLabel);
 
         JButton buttonSubmit = new JButton("Submit");
         buttonSubmit.setLayout(null);
@@ -108,8 +134,52 @@ public class MediumQuestion {
         buttonSubmit.setForeground(Color.BLACK);
         buttonSubmit.setFont(new Font("Arial", Font.BOLD, 15));
         buttonSubmit.addActionListener(e -> {
-            JOptionPane.showConfirmDialog(null, "You want to submit");
-            JOptionPane.showMessageDialog(null, "Submitted Successfully");
+            int score = 0;
+            int totalQuestions = questions.length;
+            
+            // Check each question
+            for (int i = 0; i < totalQuestions; i++) {
+                for (int j = 0; j < 4; j++) {
+                    if (radioButtons[i][j].isSelected() && j == correctAnswers[i]) {
+                        score++;
+                        break;
+                    }
+                }
+            }
+            
+            int confirm = JOptionPane.showConfirmDialog(null, 
+                "Are you sure you want to submit?", 
+                "Confirm Submission", 
+                JOptionPane.YES_NO_OPTION);
+                
+            if (confirm == JOptionPane.YES_OPTION) {
+                double percentage = (double) score / totalQuestions * 100;
+                String grade;
+                if (percentage >= 80) {
+                    grade = "Excellent!";
+                } else if (percentage >= 60) {
+                    grade = "Good!";
+                } else if (percentage >= 40) {
+                    grade = "Fair";
+                } else {
+                    grade = "Needs Improvement";
+                }
+                
+                String message = String.format(
+                    "<html><body style='text-align: center;'>" +
+                    "<h2>Quiz Results</h2>" +
+                    "<p>Total Questions: %d</p>" +
+                    "<p>Correct Answers: %d</p>" +
+                    "<p>Wrong Answers: %d</p>" +
+                    "<p>Percentage: %.1f%%</p>" +
+                    "<p>Grade: %s</p>" +
+                    "</body></html>",
+                    totalQuestions, score, totalQuestions - score, percentage, grade
+                );
+                
+                JOptionPane.showMessageDialog(null, message, "Quiz Results", JOptionPane.INFORMATION_MESSAGE);
+                resultLabel.setText(String.format("Score: %d/%d (%.1f%%)", score, totalQuestions, percentage));
+            }
         });
         panel.add(buttonSubmit);
 

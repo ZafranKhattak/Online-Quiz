@@ -80,14 +80,31 @@ public class DifficultQuestion {
                 {"A. v = √(T/μ)", "B. v = T/μ", "C. v = √(μ/T)", "D. v = μ/T"}
         };
 
-        for (int i = 0; i < questions.length; i++) {
-            JLabel label2 = new JLabel(questions[i]);
-            label2.setBounds(80, 1 + (i * 60 + 100), 950, 30);
-            label2.setForeground(Color.GREEN);
-            label2.setFont(new Font("Arial", Font.BOLD, 16));
-            panel.add(label2);
-        }
+        int correctAnswers[] = {
+                2,  // Q1: The least count of the instrument
+                0,  // Q2: 2(Δa/a) + 3(Δb/b) + ½(Δc/c)
+                0,  // Q3: The sum of their velocities
+                1,  // Q4: 45°
+                0,  // Q5: v² sin²θ / 2g
+                1,  // Q6: The normal reaction
+                1,  // Q7: Greater than the coefficient of kinetic friction
+                1,  // Q8: The area under the force-displacement graph
+                0,  // Q9: Net force = 0 and net torque = 0
+                0,  // Q10: The centre of mass
+                0,  // Q11: g' = g(1 - d/R)
+                1,  // Q12: 84 minutes
+                0,  // Q13: v = 2r²g(ρ - σ)/9η
+                1,  // Q14: The ratio of shearing stress to the velocity gradient
+                0,  // Q15: W = nRT ln(V₂/V₁)
+                0,  // Q16: η = 1 - T₂/T₁
+                0,  // Q17: Average distance between collisions
+                1,  // Q18: π/2
+                0,  // Q19: T = 2π√(l/g)
+                0   // Q20: v = √(T/μ)
+        };
 
+        JRadioButton[][] radioButtons = new JRadioButton[questions.length][4];
+        
         for (int i = 0; i < options.length; i++) {
             ButtonGroup group = new ButtonGroup();
             for (int j = 0; j < 4; j++) {
@@ -96,10 +113,18 @@ public class DifficultQuestion {
                 btn.setForeground(Color.WHITE);
                 btn.setBackground(Color.BLACK);
                 btn.setFont(new Font("Arial", Font.PLAIN, 14));
+                btn.setActionCommand(String.valueOf(j));
                 group.add(btn);
                 panel.add(btn);
+                radioButtons[i][j] = btn;
             }
         }
+
+        JLabel resultLabel = new JLabel();
+        resultLabel.setBounds(80, 1280, 500, 30);
+        resultLabel.setForeground(Color.YELLOW);
+        resultLabel.setFont(new Font("Arial", Font.BOLD, 16));
+        panel.add(resultLabel);
 
         JButton buttonSubmit = new JButton("Submit");
         buttonSubmit.setLayout(null);
@@ -108,8 +133,46 @@ public class DifficultQuestion {
         buttonSubmit.setForeground(Color.BLACK);
         buttonSubmit.setFont(new Font("Arial", Font.BOLD, 15));
         buttonSubmit.addActionListener(e -> {
-            JOptionPane.showConfirmDialog(null, "You want to submit");
-            JOptionPane.showMessageDialog(null, "Submitted Successfully");
+            int score = 0;
+            int totalQuestions = questions.length;
+            
+            for (int i = 0; i < totalQuestions; i++) {
+                for (int j = 0; j < 4; j++) {
+                    if (radioButtons[i][j].isSelected() && j == correctAnswers[i]) {
+                        score++;
+                        break;
+                    }
+                }
+            }
+            
+            int confirm = JOptionPane.showConfirmDialog(null, 
+                "Are you sure you want to submit?", 
+                "Confirm Submission", 
+                JOptionPane.YES_NO_OPTION);
+                
+            if (confirm == JOptionPane.YES_OPTION) {
+                double percentage = (double) score / totalQuestions * 100;
+                String grade;
+                if (percentage >= 80) grade = "Excellent!";
+                else if (percentage >= 60) grade = "Good!";
+                else if (percentage >= 40) grade = "Fair";
+                else grade = "Needs Improvement";
+                
+                String message = String.format(
+                    "<html><body style='text-align: center;'>" +
+                    "<h2>Quiz Results</h2>" +
+                    "<p>Total Questions: %d</p>" +
+                    "<p>Correct Answers: %d</p>" +
+                    "<p>Wrong Answers: %d</p>" +
+                    "<p>Percentage: %.1f%%</p>" +
+                    "<p>Grade: %s</p>" +
+                    "</body></html>",
+                    totalQuestions, score, totalQuestions - score, percentage, grade
+                );
+                
+                JOptionPane.showMessageDialog(null, message, "Quiz Results", JOptionPane.INFORMATION_MESSAGE);
+                resultLabel.setText(String.format("Score: %d/%d (%.1f%%)", score, totalQuestions, percentage));
+            }
         });
         panel.add(buttonSubmit);
 
